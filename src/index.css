@@ -1,0 +1,25 @@
+#root {
+  --primary-gradient: linear-gradient(to right, rgb(16, 138, 134), rgb(18, 179, 173), rgb(16, 138, 134));
+  min-height: 100%;
+  display: grid;
+  /* background: linear-gradient(to right, rgb(87, 87, 87), rgb(167, 167, 167), rgb(87, 87, 87)); */
+  background: linear-gradient(to right, rgb(75, 39, 0), rgba(255, 123, 0, 0.753), rgb(75, 39, 0));
+
+  /* rgb(97, 80, 4), rgb(231, 202, 74), rgb(97, 80, 4) --> gold */
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

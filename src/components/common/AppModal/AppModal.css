@@ -1,0 +1,79 @@
+.modal-content {
+    border: none;
+}
+
+.modal form {
+    text-align: left;
+    font-size: 12px;
+    color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-header {
+    background: linear-gradient(to right, #1d1d1d,
+            #1d1d1d, #1d1d1d);
+    color: white;
+    border: none
+}
+
+
+.modal-body {
+    background: linear-gradient(to right, #1d1d1d,
+            #1d1d1d, #1d1d1d);
+}
+
+.modal input {
+    border: none;
+    border: 1px solid rgba(38, 38, 38, 1);
+    background: #621426;
+    color: rgb(255, 255, 255);
+    font-weight: 300;
+    width: 350px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.modal input:disabled {
+    border: none;
+    border: 1px solid rgba(38, 38, 38, 1);
+    background: rgba(38, 38, 38, 0.877);
+    color: rgb(255, 255, 255);
+    font-weight: 300;
+    width: 350px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.modal label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #621426;
+    border: 1px solid rgba(38, 38, 38, 1);
+    width: 100px;
+    height: 35px;
+    margin: 6px;
+    padding: 2px;
+    color: white;
+    border-radius: 6px;
+}
+
+.btn-submit-edit {
+    padding: 6px;
+    background: #621426;
+    text-align: center;
+    color: white;
+    backdrop-filter: blur(1px);
+    border: none;
+}
+
+.btn-submit-edit:hover {
+    background: #ff003c;
+}
+
+.btn-close{
+    background-color: rgb(255, 255, 255);
+}

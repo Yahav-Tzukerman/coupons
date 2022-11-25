@@ -1,0 +1,69 @@
+.pagination {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    outline: none;
+    border-radius: 25px;
+}
+
+.pagination>.active>a {
+    background-color: rgb(255, 187, 114);
+    border-color: rgb(255, 187, 114);
+    color: #fff;
+    padding: 5px 20px;
+    border-radius: 25px;
+}
+
+.pagination>li>a {
+    border: 1px solid rgb(255, 187, 114);
+    box-shadow: 0 0 5px rgb(255, 187, 114);
+    backdrop-filter: blur(50px);
+    padding: 5px 20px;
+    outline: none;
+    cursor: pointer;
+    border-radius: 25px;
+}
+
+/* .pagination>li>a:hover {
+    background-color: transparent;
+    backdrop-filter: blur(50px);
+    box-shadow: 0 0 5px #ff013c;
+} */
+
+.pagination>.active>a,
+.pagination>.active>span,
+.pagination>.active>a:hover,
+.pagination>.active>span:hover,
+.pagination>.active>a:focus,
+.pagination>li>a:hover,
+.pagination>.active>span:focus {
+    border-color: rgb(255, 187, 114);
+    box-shadow: 0 0 5px rgb(255, 187, 114);
+    backdrop-filter: blur(50px);
+    outline: none;
+    background-color: rgb(255, 187, 114);
+    padding: 5px 30px;
+    border-radius: 25px;
+}
+
+.pagination>li>a,
+.pagination>li>span {
+    background-color: rgb(179, 92, 0);
+    color: #ffffff;
+    padding: 5px 30px;
+    border-radius: 25px;
+}
+
+.pagination>li:first-child>a,
+.pagination>li:first-child>span,
+.pagination>li:first-child>a:hover,
+.pagination>li:first-child>span:hover,
+.pagination>li:last-child>a,
+.pagination>li:last-child>span,
+.pagination>li:last-child>a:hover,
+.pagination>li:last-child>span:hover{
+    border-radius: unset;
+}

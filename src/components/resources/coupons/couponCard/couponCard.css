@@ -1,0 +1,149 @@
+.card {
+    background: linear-gradient(to right, rgb(113, 58, 0), rgba(255, 181, 77, 0.8), rgb(113, 58, 0));
+    height: 380px;
+    width: 250px;
+    border-radius: 16px;
+    position: relative;
+    display: inline-block;
+    margin: 1vw;
+    color: white;
+    box-shadow: 0 0 10px 7px rgba(0, 0, 0, 0.3);
+}
+
+.price {
+    color: rgb(255, 255, 255);
+    display: inline-block;
+    margin-right: 5px;
+    margin-top: 2px;
+    height: 30px;
+    width: 120px;
+    padding: 7px;
+    border-radius: 16px;
+    background: rgb(149, 90, 27);
+    border: 1px solid rgb(177, 138, 96);
+    float: right;
+}
+
+
+.card-badge {
+    margin-right: 5px;
+    margin-top: 5px;
+    height: 20px;
+    width: 70px;
+    padding: 4px;
+    border-radius: 16px;
+    background: rgb(149, 90, 27);
+    border: 1px solid rgb(177, 138, 96);
+    float: right;
+}
+
+.card-badge-company {
+    margin-right: 2px;
+    margin-top: 5px;
+    height: 20px;
+    width: 70px;
+    padding: 4px;
+    border-radius: 16px;
+    background: rgb(149, 90, 27);
+    border: 1px solid rgb(177, 138, 96);
+    float: right;
+}
+
+.buy-btn {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: rgb(255, 255, 255);
+    background: linear-gradient(to right, rgb(73, 38, 0), rgba(172, 100, 0, 0.8), rgb(73, 38, 0));
+    backdrop-filter: blur(20px);
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 12px;
+    border-bottom-right-radius: 16px;
+    border-bottom-left-radius: 16px;
+    text-transform: uppercase;
+}
+
+.buy-btn:hover {
+    background: linear-gradient(to right, rgb(105, 54, 0), rgb(255, 149, 0), rgb(105, 54, 0));
+}
+
+.image-container img {
+    width: 100%;
+    height: 110px;
+    object-fit: contain;
+    display: block;
+    position: relative;
+    border: none;
+    transition: 1.5s;
+}
+
+.image-container img:hover {
+    scale: 2.5;
+    z-index: 5;
+}
+
+.card-body {
+    height: 92px;
+    padding: 6px;
+}
+
+.action-button {
+    color: rgb(255, 255, 255);
+    width: 30px;
+    height: 30px;
+    margin-left: 7px;
+    margin-top: 2px;
+    border-radius: 30px;
+    font-size: 10px;
+    font-weight: 300;
+    background: rgb(149, 90, 27);
+    border: 1px solid rgb(177, 138, 96);
+    float: left
+}
+
+
+.action-button:hover {
+    background: rgb(255, 179, 0);
+}
+
+.grayed-action {
+    background: rgb(21, 195, 163);
+    color: rgb(255, 255, 255);
+    font-family: Alien Android;
+    margin-top: 5px;
+    width: 70px;
+    height: 50px;
+    padding: 6px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 6px;
+    border: 1px solid rgb(255, 255, 255);
+}
+
+.btn-delete {
+    display: none;
+    color: black;
+    font-weight: 500;
+    font-size: 10px;
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+    border: 1px solid black;
+    background: rgb(85, 14, 14);
+    background: linear-gradient(90deg, rgba(139, 10, 10, 0.877) 0%, rgb(231, 22, 22) 46%, rgb(250, 0, 29) 100%);
+    cursor: pointer;
+}
+
+.card:hover .btn-delete {
+    position: absolute;
+    display: flex;
+    left: 2px;
+    top: 5px;
+}

@@ -1,0 +1,168 @@
+a {
+    color: unset;
+    text-decoration: none;
+}
+
+h1.main-heading {
+    margin-top: 3vh;
+    font-family: "Rubik", sans-serif;
+    font-style: italic;
+    font-size: 50px;
+    font-weight: 900;
+    color: #fff;
+}
+
+h1.company-card-heading {
+    margin-top: 0;
+    font-family: "Roboto", sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+    color: #fff;
+}
+
+h1.text-banner-starshaf {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    text-align: left;
+    font-size: 40px;
+    font-weight: 200;
+    letter-spacing: 1px;
+}
+
+h1.text-banner-details {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    text-align: left;
+    font-size: 22px;
+    font-weight: 200;
+    letter-spacing: 1px;
+    text-shadow: none;
+    width: 400px;
+}
+
+h1.text-banner-moto {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 200;
+    letter-spacing: 1px;
+    text-shadow: none;
+    width: 400px;
+}
+
+h3.company-name-header {
+    font-family: "Roboto", sans-serif;
+    font-size: 30px;
+    font-weight: 200;
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 2px rgb(86, 45, 0);
+}
+
+h5.card-title {
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: 200;
+    color: #fff;
+    padding: 12px;
+}
+
+h5.price-tag {
+    font-family: "Roboto", sans-serif;
+    font-size: 11px;
+    font-weight: 200;
+    letter-spacing: 1px;
+    color: #fff;
+    text-align: left;
+}
+
+h6.card-badge-badge {
+    font-family: "Roboto", sans-serif;
+    font-size: 8px;
+    font-weight: 200;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+h1.about-us-heading {
+    margin-top: 3vh;
+    margin-left: 5rem;
+    font-family: "Roboto", sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+    color: #fff;
+    text-align: left;
+}
+
+h1.about-us-content {
+    margin-top: 0;
+    margin-left: 5rem;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    font-weight: 200;
+    color: #fff;
+    text-align: left;
+    width: 400px;
+}
+
+h1.logo-heading {
+    margin-left: 5rem;
+    font-family: "Roboto", sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+    color: #fff;
+    text-align: left;
+}
+
+h1.about-us-content-footer {
+    margin-top: 5px;
+    margin-left: 2rem;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 200;
+    color: #fff;
+    text-align: left;
+    width: 900px;
+}
+
+h1.goals-content {
+    margin-top: 2rem;
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    font-weight: 200;
+    color: #fff;
+    width: 350px;
+    padding: 16px;
+}
+
+h1.some-coupons {
+    margin-top: 5vh;
+    font-family: "Roboto", sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+}
+
+h1.about-us-content-link {
+    font-family: "Roboto", sans-serif;
+    margin-top: 10px;
+    margin-left: 28rem;
+    font-size: 16px;
+    font-weight: 200;
+    color: #fff;
+    text-align: left;
+    width: 400px;
+}
+
+h1.about-us-contact-link {
+    font-family: "Roboto", sans-serif;
+    margin-left: 15rem;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 200;
+    color: #fff;
+    text-align: left;
+    width: 600px;
+}

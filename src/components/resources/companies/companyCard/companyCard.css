@@ -1,0 +1,80 @@
+.company-card {
+    background: linear-gradient(to right, rgba(30, 15, 0, 0.2), rgba(245, 185, 102, 0.2), rgb(30, 15, 0, 0.2));
+    backdrop-filter: blur(40px);
+    height: 120px;
+    width: 300px;
+    border-radius: 16px;
+    position: relative;
+    margin: 2rem;
+    /* text-align: center; */
+    color: white;
+    box-shadow: 0 0 15px #ffba70;
+    border: 1px solid rgb(177, 138, 96);
+}
+
+.company-card:hover {
+    transition: 2s;
+    width: 600px;
+}
+
+.company-logo {
+    position: relative;
+    display: inline-block;
+    width: 120px;
+    height: 80px;
+    padding: 5px;
+}
+
+.company-card-heading {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+    font-size: 60px;
+    font-weight: 900;
+    height: 120px;
+    width: 300px;
+}
+
+.company-logo-container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(180deg, rgb(130, 67, 0), rgb(255, 181, 78), rgb(130, 67, 0));
+    height: 120px;
+    width: 150px;
+    padding: 6px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.company-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(180deg, rgb(130, 67, 0), rgb(255, 181, 78), rgb(130, 67, 0));
+    height: 120px;
+    width: 150px;
+    padding: 6px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    float: right;
+}
+
+.company-content h6 {
+    font-size: 14px;
+    font-weight: 200;
+    text-align: center;
+}
+
+.company-card a {
+    text-decoration: none;
+    color: white;
+}
+
+

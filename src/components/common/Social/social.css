@@ -1,0 +1,87 @@
+.container-social {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 89vw;
+    bottom: 14vh;
+}
+
+.effect .buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.effect {
+    display: flex;
+}
+
+.effect a {
+    backdrop-filter: blur(10px);
+    text-decoration: none !important;
+    width: 40px;
+    height: 40px;
+    margin: 15px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: rgb(255, 255, 255);
+    background: rgba(255, 1, 60, 0.2);
+    border: 2px solid rgba(255, 1, 60, 0.6);
+    border-radius: 50px;
+    padding: 12px;
+    transition: 0.2s;
+    box-shadow: 4px 2px 16px 2px rgba(0, 0, 0, 0.333);
+}
+
+.effect a:hover {
+    color: #ffffff;
+    background: #ff013c;
+    box-shadow: 0 0 5px #ff013c,
+        0 0 25px #ff013c,
+        0 0 50px #ff013c,
+        0 0 200px #ff013c;
+    scale: 1.2;
+}
+
+.effect a i {
+    position: relative;
+    z-index: 3;
+}
+
+.effect a:last-child {
+    margin-right: 0px;
+}
+
+.effect a:before {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.effect a i {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.effect.amiens a {
+    transition: all 0.2s linear 0.2s;
+}
+
+.effect.amiens a i {
+    transition: all 0.2s linear 0s;
+}
+
+.effect.amiens a:hover {
+    transition: all 0.2s linear 0s;
+}
+
+@media screen and (max-width: 550px) {
+    .container-social {
+        bottom: 30vh;
+    }
+}

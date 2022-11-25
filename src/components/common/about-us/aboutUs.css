@@ -1,0 +1,240 @@
+.about-us-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 350vh;
+}
+
+.about-us {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    height: 40vh;
+    width: 70vw;
+    background-color: rgb(255, 255, 255, 0.2);
+    margin-left: 15vw;
+}
+
+.about-us-dark {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    height: 30vh;
+    width: 70vw;
+    padding: 12px;
+    background-color: rgba(0, 0, 0, 0.6);
+    margin-left: 15vw;
+}
+
+.home-coupons-display {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    height: 70vh;
+    width: 70vw;
+    background-color: rgb(255, 255, 255, 0.2);
+    margin-left: 15vw;
+}
+
+.about-us-dark-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    height: 10vh;
+    width: 70vw;
+    padding: 12px;
+    background-color: rgba(0, 0, 0, 0.6);
+    margin-left: 15vw;
+}
+
+.about-us-image {
+    height: 40vh;
+    background-position: center;
+    background-size: cover;
+    width: 35vw;
+}
+
+.about-logos {
+    margin-left: 4rem;
+    height: 22vh;
+    background-position: center;
+    background-size: cover;
+    width: 50vw;
+}
+
+.goals-seperate {
+    height: 30vh;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+}
+
+.goals {
+    height: 30vh;
+}
+
+.to-all {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
+}
+
+.go-to-link-button {
+    backdrop-filter: blur(10px);
+    text-decoration: none !important;
+    width: 100px;
+    height: 30px;
+    margin: 15px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: rgb(255, 255, 255);
+    background: rgba(255, 213, 1, 0.2);
+    border: 2px solid rgba(255, 213, 1, 0.2);
+    border-radius: 16px;
+    transition: 0.2s;
+    box-shadow: 4px 2px 16px 2px rgba(0, 0, 0, 0.333);
+}
+
+.go-to-link-button:hover {
+    color: #ffffff;
+    background: #ffd501;
+    box-shadow: 0 0 5px #ffd501,
+        0 0 15px #ffd501;
+    scale: 1.1;
+}
+
+.go-to-link-button-2 {
+    backdrop-filter: blur(10px);
+    text-decoration: none !important;
+    width: 100px;
+    height: 30px;
+    margin-top: 30px;
+    overflow: hidden;
+    color: rgb(255, 255, 255);
+    background: rgba(255, 213, 1, 0.2);
+    border: 2px solid rgba(255, 213, 1, 0.2);
+    border-radius: 16px;
+    transition: 0.2s;
+    box-shadow: 4px 2px 16px 2px rgba(0, 0, 0, 0.333);
+}
+
+.go-to-link-button-2:hover {
+    color: #ffffff;
+    background: #ffd501;
+    box-shadow: 0 0 5px #ffd501,
+        0 0 15px #ffd501;
+    scale: 1.1;
+}
+
+.about-us-register-button {
+    backdrop-filter: blur(10px);
+    text-decoration: none !important;
+    width: 100px;
+    height: 30px;
+    overflow: hidden;
+    color: rgb(255, 255, 255);
+    background: rgba(255, 213, 1, 0.2);
+    border: 2px solid rgba(255, 213, 1, 0.2);
+    border-radius: 16px;
+    transition: 0.2s;
+    box-shadow: 4px 2px 16px 2px rgba(0, 0, 0, 0.333);
+}
+
+.about-us-register-button:hover {
+    color: #ffffff;
+    background: #ffd501;
+    box-shadow: 0 0 5px #ffd501,
+        0 0 15px #ffd501;
+    scale: 1.1;
+}
+
+
+/* social */
+
+.container-social {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 1rem;
+}
+
+.effect .buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.effect {
+    display: flex;
+}
+
+.effect a {
+    backdrop-filter: blur(10px);
+    text-decoration: none !important;
+    width: 40px;
+    height: 40px;
+    margin: 15px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: rgb(255, 255, 255);
+    background: rgba(255, 213, 1, 0.2);
+    border: 2px solid rgba(255, 213, 1, 0.2);
+    border-radius: 50px;
+    padding: 12px;
+    transition: 0.2s;
+    box-shadow: 4px 2px 16px 2px rgba(0, 0, 0, 0.333);
+}
+
+.effect a:hover {
+    color: #ffffff;
+    background: #ffd501;
+    box-shadow: 0 0 5px #ffd501,
+        0 0 15px #ffd501;
+    scale: 1.1;
+}
+
+.effect a i {
+    position: relative;
+    z-index: 3;
+}
+
+.effect a:last-child {
+    margin-right: 0px;
+}
+
+.effect a:before {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.effect a i {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.effect.amiens a {
+    transition: all 0.2s linear 0.2s;
+}
+
+.effect.amiens a i {
+    transition: all 0.2s linear 0s;
+}
+
+.effect.amiens a:hover {
+    transition: all 0.2s linear 0s;
+}

@@ -1,0 +1,17 @@
+.all-coupons-page {
+    margin-top: 2vh;
+    min-height: 100vh;
+}
+
+.coupons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.app-coupons-filters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

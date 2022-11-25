@@ -1,0 +1,117 @@
+import React, { useEffect, useState } from "react";
+import { ICategory } from "../../models/ICategory";
+import { ICoupon } from "../../models/ICoupon";
+import { IUserResponse } from "../../models/IUserResponse";
+import { ICompany } from '../../models/ICompany';
+
+
+function useModal() {
+
+    const [modalIsOpen, setIsOpen] = useState({ modal: "", edit: false, show: false });
+    const [edit, setEdit] = useState(false);
+    const [coupon, setCoupon] = useState<ICoupon>();
+    const [user, setUser] = useState<IUserResponse>();
+    const [category, setCategory] = useState<ICategory>();
+    const [company, setCompany] = useState<ICompany>();
+
+    function openModalForAddCoupon() {
+        setIsOpen({ modal: "Coupon", edit: false, show: true });
+    }
+
+    function openModalForEditCoupon(coupon: ICoupon) {
+        setCoupon(coupon);
+        setEdit(true);
+        setIsOpen({ modal: "Coupon", edit: true, show: true });
+    }
+
+    function openModalForAddCompany() {
+        setIsOpen({ modal: "Company", edit: false, show: true });
+    }
+
+    function openModalForEditCompany(company: ICompany) {
+        setCompany(company);
+        setEdit(true);
+        setIsOpen({ modal: "Company", edit: true, show: true });
+    }
+
+    function openModalForAddUser() {
+        setIsOpen({ modal: "User", edit: false, show: true });
+    }
+
+    function openModalForEditUser(user: IUserResponse) {
+        setUser(user);
+        setEdit(true);
+        setIsOpen({ modal: "User", edit: true, show: true });
+    }
+
+    function openModalForAddCategory() {
+        setIsOpen({ modal: "Category", edit: false, show: true });
+    }
+
+    function openModalForEditCategory(category: ICategory) {
+        setCategory(category);
+        setEdit(true);
+        setIsOpen({ modal: "Category", edit: true, show: true });
+    }
+
+
+    function afterOpenModal() {
+
+    }
+
+    function closeModal() {
+        setEdit(false);
+        setIsOpen({ modal: "", edit: false, show: false });
+    }
+
+
+    return {
+        modalIsOpen,
+        edit,
+        coupon,
+        user,
+        category,
+        company,
+        openModalForAddCoupon,
+        openModalForEditCoupon,
+        openModalForAddUser,
+        openModalForEditUser,
+        openModalForAddCategory,
+        openModalForEditCategory,
+        openModalForAddCompany,
+        openModalForEditCompany,
+        afterOpenModal,
+        closeModal
+    }
+}
+
+export default useModal;
+
+// function generateCouponModal(coupon: ICoupon, customStyles: Modal.Styles) {
+//     return (<Modal
+//         isOpen={modalIsOpen.show}
+//         onAfterOpen={afterOpenModal}
+//         onRequestClose={closeModal}
+//         style={customStyles}
+//         contentLabel="Example Modal">
+//         {modalIsOpen.modal === "Coupon" && (modalIsOpen.edit ? <AddCouponModal coupon={coupon} /> : <AddCouponModal />)}
+//     </Modal>)
+// }
+
+// function generateAdminModal(customStyles: Modal.Styles, coupon?: ICoupon, user?: IUserResponse, category?: ICategory) {
+//     return (
+//         <Modal
+//             isOpen={modalIsOpen.show}
+//             onAfterOpen={afterOpenModal}
+//             onRequestClose={closeModal}
+//             style={customStyles}
+//             // portalClassName="custom-modal"
+//             contentLabel="Example Modal">
+
+//             {modalIsOpen.modal === "User" && (modalIsOpen.edit ? <AddOrEditUser user={user} /> : <AddOrEditUser />) ||
+//                 modalIsOpen.modal === "Coupon" && (modalIsOpen.edit ? <AddCouponModal coupon={coupon} /> : <AddCouponModal />) ||
+//                 modalIsOpen.modal === "Category" && (modalIsOpen.edit ? <AddOrEditCategory category={category} /> : <AddOrEditCategory />)}
+
+//         </Modal>
+//     )
+// }

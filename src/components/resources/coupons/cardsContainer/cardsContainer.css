@@ -1,0 +1,53 @@
+.coupons__page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards-container {
+    display: flexbox;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 2rem;
+    border-radius: 3px;
+    z-index: 0;
+}
+
+.pagination a {
+    flex: 1;
+    border-radius: 3px;
+}
+
+.btn-add {
+    background: linear-gradient(to right, rgb(16, 138, 134), rgba(27, 239, 232, 0.582), rgb(16, 138, 134));
+    border-radius: 25px;
+    font-weight: 500;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    box-shadow: 0 0 12px rgb(0, 0, 0, .3);
+    transition: .2s;
+}
+
+.btn-add:hover {
+    background: linear-gradient(to right, rgb(16, 138, 134), rgba(0, 255, 247, 0.81), rgb(16, 138, 134));
+}
+
+.blur {
+    position: relative;
+    filter: blur(3px);
+}
+
+.search-bar {
+    width: 100%;
+}

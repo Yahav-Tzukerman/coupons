@@ -1,0 +1,10 @@
+.dropdown-container select {
+    background-color: rgb(16, 138, 134);
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 6px;
+    background: none;
+    padding: 5px;
+    margin-left: 5px;
+    text-align: center;
+    color: white;
+}

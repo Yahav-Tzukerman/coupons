@@ -1,0 +1,113 @@
+.customer-page-container {
+    min-height: 100vh;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: safe;
+    align-items: center;
+}
+
+.customer-container {
+    padding: 1rem;
+    width: 1200px;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(291deg, rgb(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 50%, rgb(255, 255, 255, 0.2) 100%);
+    backdrop-filter: blur(40px);
+    border-radius: 24px;
+    box-shadow: 0 0 0 1px rgb(255, 255, 255, 0.5);
+}
+
+.customer-profile-panel {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+    border-radius: 24px;
+    background: transparent;
+    backdrop-filter: blur(20px);
+    border: 1px solid rgb(255, 253, 254, 0.5);
+}
+
+.customer-cart-panel {
+    border-radius: 24px;
+    padding: 1rem;
+    width: 100%;
+    background: transparent;
+    backdrop-filter: blur(20px);
+    border: 1px solid rgb(255, 253, 254, 0.5);
+}
+
+.profile-input-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 400px;
+    height: 30px;
+    padding: 1rem;
+}
+
+.text-container {
+    height: 17px;
+    width: 100px;
+}
+
+#re {
+    font-size: 14px;
+    padding: 1px;
+    margin-right: 0.75rem;
+    height: 20px;
+    width: 20px;
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+    box-shadow: 0 0 0 1px rgb(255, 255, 255, 0.5);
+}
+
+.profile-edit-btn {
+    background: transparent;
+    font-size: 8px;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-align: center;
+    width: 50px;
+    height: 20px;
+    margin-left: 0.5rem;
+    color: #ffffff;
+    cursor: pointer;
+    border: 1px solid rgb(255, 255, 255);
+}
+
+.profile-edit-btn:hover {
+    background: rgb(255, 255, 255);
+    color: #000000;
+}
+
+#re:hover {
+    background: #ffffff;
+    color: #000000;
+    box-shadow: 0 0 5px #ffffff;
+}
+
+#message {
+    font-size: 14px;
+    margin-left: 0.5rem;
+    width: 150px;
+    border: none;
+    padding-left: 0.3rem;
+}
+
+#message::placeholder {
+    color: white;
+}
+
+#message:placeholder-shown {
+    color: rgb(0, 0, 0);
+    background-color: #161616;
+}
+
+#message:disabled {
+    font-size: 14px;
+    background-color: transparent;
+    border: none;
+}
