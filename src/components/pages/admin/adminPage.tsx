@@ -13,6 +13,8 @@ import SalesPerMonth from "../../Statistics/TotalSalesPerMonthChart/SalesPerMont
 import AddOrEditUser from "../../common/AppForms/addOrEditUser";
 import AddOrEditCompany from "../../common/AppForms/addOrEditCompany";
 import './adminPage.css';
+import '../../../assets/styles.css';
+import AddOrEditCategory from "../../common/AppForms/addOrEditCategory";
 
 interface IProps {
 
@@ -44,7 +46,7 @@ const AdminPage: React.FC<IProps> = () => {
         <>
             <div className="admin-page-container">
                 <div className='spacer-3' />
-                <h1 className="main-header">Admin Page</h1>
+                <h1 className="main-heading">Admin Page</h1>
                 <div className='spacer-3' />
                 <input type="button" value="Coupons" className="accordion" onClick={handlePressCoupons} />
                 <div className={couponsIsOpen ? "" : "closed-panel"}>
@@ -91,15 +93,15 @@ const AdminPage: React.FC<IProps> = () => {
                                                 <td>{coupon.price}</td>
                                                 <td id="image">{coupon.imageUrl}</td>
                                                 <td>
-                                                    <input type="button" className="material-symbols-outlined" value="delete" data-tip="delete coupon" data-place="left" onClick={() => { }} />
+                                                    <input type="button" className="material-symbols-outlined" value="delete" data-tip="delete coupon" data-place="left" onClick={() => onDeleteCoupon(coupon.id)} />
 
                                                     <AppModal
                                                         title={"Edit Coupon"}
                                                         edit={true}
                                                     >
-                                                        <AddOrEditCoupon 
+                                                        <AddOrEditCoupon
                                                             coupon={coupon}
-                                                            />
+                                                        />
                                                     </AppModal>
                                                     {/* <input type="button" className="material-symbols-outlined" value="edit" data-tip="delete coupon" data-place="left" /> */}
                                                 </td>
@@ -227,9 +229,10 @@ const AdminPage: React.FC<IProps> = () => {
                                                 <td>{user.role}</td>
                                                 <td>{user.companyId}</td>
                                                 <td>
-                                                    <input type="button" className="material-symbols-outlined" value="delete" data-tip="delete user" data-place="left" onClick={() => { }} />
+                                                    <input type="button" className="material-symbols-outlined" value="delete" data-tip="delete user" data-place="left" onClick={() => onDeleteUser(user.id)} />
                                                     <AppModal
                                                         title={"Edit User"}
+                                                        edit={true}
                                                     >
                                                         <AddOrEditUser user={user} />
                                                     </AppModal>
@@ -286,9 +289,10 @@ const AdminPage: React.FC<IProps> = () => {
                                                 <td>{company.phone}</td>
                                                 <td>{company.logo}</td>
                                                 <td>
-                                                    <input type="button" className="material-symbols-outlined" value="delete" data-tip="delete user" data-place="left" onClick={() => { }} />
+                                                    <input type="button" className="material-symbols-outlined" value="delete" data-tip="delete user" data-place="left" onClick={() => { onDeleteCompany(company.id) }} />
                                                     <AppModal
-                                                        title={"Edit Company"}
+                                                        title={"Edit Coupon"}
+                                                        edit={true}
                                                     >
                                                         <AddOrEditCompany company={company} />
                                                     </AppModal>
@@ -309,6 +313,53 @@ const AdminPage: React.FC<IProps> = () => {
                         </Row>
                     </div>
                 </div>
+
+                <input type="button" value="Categories" className="accordion" onClick={handlePressCategories} />
+                <div className={categosriesIsOpen ? "" : "closed-panel"}>
+                    <div className="inside-container">
+                        <Row>
+                            <Col sm={12}>
+                                <AppModal
+                                    title={"Edit Category"}
+                                >
+                                    <AddOrEditCategory />
+                                </AppModal>
+                                {/* <input id="add" type="button" className="material-symbols-outlined" value="add" data-tip="add new user" data-place="left" /> */}
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col sm={12}>
+                                <table className="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Id</th>
+                                            <th scope="col">name</th>
+                                        </tr>
+                                    </thead>
+                                    {categories.map(category => (
+                                        <tbody key={category.id}>
+                                            <tr>
+                                                <th scope="row">{category.id}</th>
+                                                <td>{category.name}</td>
+                                                <td>
+                                                    <input type="button" className="material-symbols-outlined" value="delete" data-tip="delete user" data-place="left" onClick={() => { onDeleteCategory(category.id) }} />
+                                                    <AppModal
+                                                        title={"Edit Category"}
+                                                        edit={true}
+                                                    >
+                                                        <AddOrEditCategory category={category} />
+                                                    </AppModal>
+                                                    {/* <input type="button" className="material-symbols-outlined" value="edit" data-tip="edit user" data-place="left" /> */}
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    ))}
+                                </table>
+                            </Col>
+                        </Row>
+                    </div>
+                </div>
+
                 <div className='spacer-3' />
             </div >
         </>

@@ -4,3 +4,22 @@
     justify-content: center;
     align-items: center;
 }
+
+.dropdown-form-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-error {
+    margin-top: .5vh;
+    margin-bottom: .5vh;
+    display: flex;
+    max-width: 350px;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    text-align: center;
+    color: white;
+    background-color: rgba(233, 12, 49, 0.641);
+}

@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { ICompany } from '../../models/ICompany';
 import CompanyService from '../../services/company.service';
 import usePagination from "../usePagination/usePagination";
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css';
 
 
 
@@ -12,12 +14,28 @@ function useCompanies() {
 
     function onDeleteCompany(id: number) {
 
-        CompanyService.deleteCompany(id).then((response) => {
-            alert(`coupon ${id} was deleted successfully!`)
-        }).catch((error) => {
-            alert(error.response.data.message);
+        confirmAlert({
+            title: 'Confirm to delete',
+            message: 'Are you sure you want to delete this coupon?',
+            buttons: [
+                {
+                    label: 'Yes',
+                    onClick: () => {
+                        CompanyService.deleteCompany(id).then((response) => {
+                            alert(`coupon ${id} was deleted successfully!`)
+                        }).catch((error) => {
+                            alert(error.response.data.message);
+                        });
+                        window.location.reload();
+                    }
+                },
+                {
+                    label: 'No',
+                }
+            ]
         });
-        window.location.reload();
+
+
     }
 
     useEffect(() => {

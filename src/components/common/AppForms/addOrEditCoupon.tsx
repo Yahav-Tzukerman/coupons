@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import { ICompanyList } from "../../../models/ICompanyList";
 import { ICoupon } from "../../../models/ICoupon";
 import CouponsService from "../../../services/coupon.service";
+import CategoriesDropDown from "../../resources/categories/categoriesDropDown/categoriesDropDown";
 import CompaniesDropDown from "../../resources/companies/companiesDropDown/companiesDropDown";
 import './Form.css';
 
@@ -137,7 +138,7 @@ const AddOrEditCoupon = ({ coupon }: IAddCouponProps) => {
                             type="text"
                             placeholder={coupon?.description ? coupon.description : "Enter Description"}
                             name="description"
-                            id="description"
+                            id="title"
                             className="add-coupon-input"
                             onChange={(e) => setDescription(e.target.value)}
                             required
@@ -145,8 +146,10 @@ const AddOrEditCoupon = ({ coupon }: IAddCouponProps) => {
                     </div>
                     <div className="modal-form__group">
                         <input
-                            type="date"
-                            placeholder={coupon?.startDate ? coupon.startDate : "Enter start date"}
+                            type="text"
+                            onFocus={(e) => (e.target.type = "date")}
+                            onBlur={(e) => (e.target.type = "text")}
+                            placeholder={coupon?.startDate ? 'Start Date: '.concat(new Date(coupon.startDate).toUTCString().substring(5, 16)) : "Enter start date"}
                             name="startDate"
                             id="startDate"
                             className="add-coupon-input"
@@ -156,23 +159,14 @@ const AddOrEditCoupon = ({ coupon }: IAddCouponProps) => {
                     </div>
                     <div className="modal-form__group">
                         <input
-                            type="date"
-                            placeholder={coupon?.endDate ? coupon.endDate : "Enter end date"}
-                            name="endDate"
+                            type="text"
+                            onFocus={(e) => (e.target.type = "date")}
+                            onBlur={(e) => (e.target.type = "text")}
                             id="endDate"
+                            placeholder={coupon?.endDate ? 'End Date: '.concat(new Date(coupon.endDate).toUTCString().substring(5, 16)) : "Enter end date"}
+                            name="endDate"
                             className="add-coupon-input"
                             onChange={(e) => setEndDate(e.target.value)}
-                            required
-                        />
-                    </div>
-                    <div className="modal-form__group">
-                        <input
-                            type="text"
-                            placeholder={coupon?.category ? coupon.category : "Enter category"}
-                            name="category"
-                            id="category"
-                            className="add-coupon-input"
-                            onChange={(e) => setCategory(e.target.value)}
                             required
                         />
                     </div>
@@ -198,9 +192,6 @@ const AddOrEditCoupon = ({ coupon }: IAddCouponProps) => {
                             required
                         />
                     </div>
-                    <CompaniesDropDown
-                        selectedCompany={setCompanyId}
-                        defaultCompanyId={coupon?.companyId === undefined ? 0 : coupon.companyId} />
                     <div className="modal-form__group">
                         <input
                             type="text"
@@ -212,7 +203,20 @@ const AddOrEditCoupon = ({ coupon }: IAddCouponProps) => {
                             required
                         />
                     </div>
-                    {error !== "" && <div className="error">{error}</div>}
+                    <div className="modal-form__group dropdown-form-group">
+                        <label>Company</label>
+                        <CompaniesDropDown
+                            selectedCompany={setCompanyId}
+                            defaultCompanyId={coupon?.companyId === undefined ? 0 : coupon.companyId} />
+                    </div>
+                    <div className="modal-form__group dropdown-form-group">
+                        <label>Category</label>
+                        <CategoriesDropDown
+                            selectedCategory={setCategory}
+                            defaultCategory={coupon?.category}
+                        />
+                    </div>
+                    {error !== "" && <div className="form-error">{error}</div>}
                     <div className="">
                         {!coupon?.id && <input type="button" className="add-coupon-button" value="add coupon" onClick={onAddCoupon} />}
                         {coupon?.id && <input type="button" className="add-coupon-button" value="edit coupon" onClick={onEditCoupon} />}

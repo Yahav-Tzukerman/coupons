@@ -1,5 +1,7 @@
 .admin-page-container {
     min-height: 100vh;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
     top: 0;
     display: flex;
     flex-direction: column;
@@ -68,7 +70,7 @@
     margin: 5px;
     border: none;
     border-radius: 25px;
-    box-shadow: 0 0 5px #ff013c;
+    box-shadow: 0 0 5px #ffaf01;
 }
 
 
@@ -77,7 +79,7 @@
 }
 
 .material-symbols-outlined:hover {
-    background-color: rgb(255, 1, 60, 1);
+    background-color: rgb(176, 121, 1);
 }
 
 .table th,
@@ -88,7 +90,7 @@ td {
     padding: 20px;
     font-weight: 400;
     text-align: center;
-    box-shadow: 0 0 2px rgba(255, 1, 60, 0.576);
+    box-shadow: 0 0 2px rgba(238, 238, 238, 0.576);
 }
 
 .table td,
@@ -97,7 +99,7 @@ thead,
 tbody {
     width: 1400px;
     border: none;
-    box-shadow: 0 0 2px rgba(255, 1, 60, 0.576);
+    box-shadow: 0 0 2px rgba(183, 183, 183, 0.576);
 }
 
 #description,

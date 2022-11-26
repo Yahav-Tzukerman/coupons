@@ -28,7 +28,7 @@
 .modal input {
     border: none;
     border: 1px solid rgba(38, 38, 38, 1);
-    background: #621426;
+    background: #e49f16;
     color: rgb(255, 255, 255);
     font-weight: 300;
     width: 350px;
@@ -51,7 +51,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #621426;
+    background: #56440b;
     border: 1px solid rgba(38, 38, 38, 1);
     width: 100px;
     height: 35px;
@@ -74,6 +74,6 @@
     background: #ff003c;
 }
 
-.btn-close{
-    background-color: rgb(255, 255, 255);
+.btn-close {
+    background-color: rgb(214, 33, 33);
 }
