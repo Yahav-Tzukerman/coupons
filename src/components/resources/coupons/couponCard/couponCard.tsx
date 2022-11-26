@@ -30,7 +30,7 @@ const CouponCard = ({
 
     return (
         <div className={isGrayed ? "grayed-card" : "card"}>
-            {decodedToken.roles === "ROLE_ADMIN" && <Row>
+            {decodedToken.roles === "ROLE_ADMIN" || decodedToken?.companyId === data.companyId && <Row>
                 <Col sm={12}>
                     <input type="button" className="btn-delete" value="X" onClick={() => deleteCoupon(data.id)} />
                 </Col>
