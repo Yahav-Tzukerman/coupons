@@ -23,3 +23,24 @@
     color: white;
     background-color: rgba(233, 12, 49, 0.641);
 }
+
+#form-button {
+    background-color: rgb(146, 99, 28);
+    border: 1px solid black;
+    border-radius: 25px;
+    margin: .5vh;
+    font-size: 18px;
+    font-weight: 600;
+
+}
+
+#form-button:hover {
+    background-color: rgb(219, 154, 12);
+}
+
+#input-error {
+    color: rgb(226, 19, 19);
+    /* box-shadow: 4px 2px 16px 2px rgb(0, 0, 0, 0.6); */
+    font-weight: 600;
+    font-size: 16px;
+}

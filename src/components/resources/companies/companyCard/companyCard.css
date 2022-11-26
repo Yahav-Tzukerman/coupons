@@ -21,7 +21,7 @@
     position: relative;
     display: inline-block;
     width: 120px;
-    height: 80px;
+    height: 120px;
     padding: 5px;
 }
 
@@ -76,5 +76,3 @@
     text-decoration: none;
     color: white;
 }
-
-

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import { NAME_REGEX, PHONE_REGEX } from "../../../constants/matcher";
 import { ICompany } from "../../../models/ICompany";
 import CompanyService from "../../../services/company.service";
 import './Form.css';
@@ -95,6 +96,17 @@ const AddOrEditCompany = ({ company }: IAddOrEditCompanyProps) => {
                             className="add-coupon-input"
                             onChange={(e) => setName(e.target.value)}
                             required
+                            onFocus={(e) => {
+                                e.target.value = `${name}`;
+                                e.target.id = "";
+                            }}
+                            onBlur={(e) => {
+                                if (!NAME_REGEX.exec(e.target.value)) {
+                                    e.target.type = "text"
+                                    e.target.value = "invalid name"
+                                    e.target.id = "input-error";
+                                }
+                            }}
                         />
                     </div>
                     <div className="modal-form__group">
@@ -106,6 +118,16 @@ const AddOrEditCompany = ({ company }: IAddOrEditCompanyProps) => {
                             className="add-coupon-input"
                             onChange={(e) => setAddress(e.target.value)}
                             required
+                            onFocus={(e) => {
+                                e.target.value = `${address}`;
+                                e.target.id = "";
+                            }}
+                            onBlur={(e) => {
+                                if (!NAME_REGEX.exec(e.target.value)) {
+                                    e.target.value = "invalid address"
+                                    e.target.id = "input-error";
+                                }
+                            }}
                         />
                     </div>
                     <div className="modal-form__group">
@@ -117,17 +139,30 @@ const AddOrEditCompany = ({ company }: IAddOrEditCompanyProps) => {
                             className="add-coupon-input"
                             onChange={(e) => setPhone(e.target.value)}
                             required
+                            onFocus={(e) => {
+                                e.target.value = `${phone}`;
+                                e.target.id = "";
+                            }}
+                            onBlur={(e) => {
+                                if (!PHONE_REGEX.exec(e.target.value)) {
+                                    e.target.type = "text"
+                                    e.target.value = "invalid phone number"
+                                    e.target.id = "input-error";
+                                }
+                            }}
                         />
                     </div>
                     <div className="modal-form__group">
                         <input
-                            type="date"
-                            placeholder={company?.foundationDate ? company.foundationDate : "Enter foundationDate"}
+                            type="text"
+                            placeholder={company?.foundationDate ? company.foundationDate : "Enter foundation date"}
                             name="foundationDate"
                             id="foundationDate"
                             className="add-coupon-input"
                             onChange={(e) => setFoundationDate(e.target.value)}
                             required
+                            onFocus={(e) => (e.target.type = "date")}
+                            onBlur={(e) => (e.target.type = "text")}
                         />
                     </div>
                     <div className="modal-form__group">
@@ -139,10 +174,20 @@ const AddOrEditCompany = ({ company }: IAddOrEditCompanyProps) => {
                             className="add-coupon-input"
                             onChange={(e) => setLogo(e.target.value)}
                             required
+                            onFocus={(e) => {
+                                e.target.value = `${logo}`;
+                                e.target.id = "";
+                            }}
+                            onBlur={(e) => {
+                                if (!logo.endsWith('.png') && !logo.endsWith('.jpg')) {
+                                    e.target.value = "Image url must end with .png"
+                                    e.target.id = "input-error";
+                                }
+                            }}
                         />
                     </div>
 
-                    {error !== "" && <div className="error">{error}</div>}
+                    {error !== "" && <div className="form-error">{error}</div>}
                     <div className="">
                         {!company?.id && <input type="button" className="add-coupon-button" value="add company" onClick={onAddCompany} />}
                         {company?.id && <input type="button" className="add-coupon-button" value="edit company" onClick={onEditCompany} />}

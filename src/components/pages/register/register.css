@@ -12,8 +12,8 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 400px;
-    height: 580px;
+    width: 500px;
+    height: 800px;
     padding: 2px;
     background: linear-gradient(90deg, rgba(255, 198, 119, 0.2), rgba(128, 86, 28, 0.2));
     box-shadow: 0 0 15px rgb(255, 187, 114);
@@ -39,6 +39,8 @@
     margin-top: 0;
     width: 300px;
     padding: 3px;
+    margin: .5vh;
+    margin-left: 2vh;
 }
 
 .form__field {
@@ -47,7 +49,7 @@
     border: 0;
     border-bottom: 2px solid rgb(255, 255, 255);
     outline: 0;
-    font-size: 14px;
+    font-size: 16px;
     color: white;
     padding: 1px 0;
     background: transparent;
@@ -165,4 +167,37 @@ h1.register-heading {
     top: -24px;
     right: 180px;
     box-shadow: 0 0 5px rgb(255, 187, 114, 0.2);
+}
+
+.register-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #d49219c6;
+    border: 1px solid rgba(38, 38, 38, 1);
+    width: 120px;
+    height: 35px;
+    margin: 6px;
+    padding: 2px;
+    color: white;
+    border-radius: 6px;
+}
+
+.register-label:hover {
+    background: #ffa600;
+}
+
+.dropdown-form-group {
+    margin: 2vh;
+}
+
+.register__submit:disabled {
+    border: none;
+    border: 1px solid rgba(38, 38, 38, 1);
+    background: rgba(38, 38, 38, 0.877);
+    color: rgb(255, 255, 255);
+    font-weight: 300;
+    width: 350px;
+    text-align: center;
+    font-size: 14px;
 }

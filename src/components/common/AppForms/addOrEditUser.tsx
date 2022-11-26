@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react"
+import { EMAIL_REGEX, NAME_REGEX, PASSWORD_REGEX, PHONE_REGEX } from "../../../constants/matcher";
 import { ICompanyList } from "../../../models/ICompanyList";
 import { IRequestUser } from "../../../models/IRequestUser";
 import { IUserResponse } from "../../../models/IUserResponse";
 import UserService from "../../../services/users.service";
 import CompaniesDropDown from "../../resources/companies/companiesDropDown/companiesDropDown";
+import RolesDropDown from "../dropdowns/roles-dropdown/rolesDropdown";
 import './Form.css';
 
 
@@ -28,9 +30,10 @@ const AddOrEditUser = ({ user }: IAddOrEditUserProps) => {
     // const [user, setUser] = useState<IRequestUser>(defaultUser);
     const [username, setUsername] = useState<string>("");
     const [password, setPassword] = useState<string>("");
+    const [repeatPassword, setRepeatPassword] = useState<string>("");
     const [firstName, setFirstName] = useState<string>("");
     const [lastName, setLastName] = useState<string>("");
-    const [role, setRole] = useState<string>("");
+    const [role, setRole] = useState<string>("CUSTOMER");
     const [phone, setPhone] = useState<string>("");
     const [companyId, setCompanyId] = useState<number>(0);
     const [companyList, setCompanyList] = useState<ICompanyList>();
@@ -60,6 +63,7 @@ const AddOrEditUser = ({ user }: IAddOrEditUserProps) => {
         defaultUser.lastName = lastName;
         defaultUser.phone = phone;
         defaultUser.role = role;
+        defaultUser.companyId = companyId;
     }
 
 
@@ -105,17 +109,62 @@ const AddOrEditUser = ({ user }: IAddOrEditUserProps) => {
                             className="add-coupon-input"
                             onChange={(e) => setUsername(e.target.value)}
                             required
+                            onFocus={(e) => {
+                                e.target.value = `${username}`;
+                                e.target.id = "";
+                            }}
+                            onBlur={(e) => {
+                                if (!EMAIL_REGEX.exec(e.target.value)) {
+                                    e.target.value = "Username must be an Email"
+                                    e.target.id = "input-error";
+                                }
+                            }}
                         />
                     </div>
                     <div className="modal-form__group">
                         <input
-                            type="text"
+                            type="password"
                             placeholder={"Enter New Password"}
                             name="password"
                             id="password"
                             className="add-coupon-input"
                             onChange={(e) => setPassword(e.target.value)}
                             required
+                            onFocus={(e) => {
+                                e.target.type = "password"
+                                e.target.value = `${password}`;
+                                e.target.id = "";
+                            }}
+                            onBlur={(e) => {
+                                if (!PASSWORD_REGEX.exec(e.target.value)) {
+                                    e.target.type = "text"
+                                    e.target.value = "invalid password"
+                                    e.target.id = "input-error";
+                                }
+                            }}
+                        />
+                    </div>
+                    <div className="modal-form__group">
+                        <input
+                            type="password"
+                            placeholder={"Repeat Password"}
+                            name="password"
+                            id="password"
+                            className="add-coupon-input"
+                            onChange={(e) => setRepeatPassword(e.target.value)}
+                            required
+                            onFocus={(e) => {
+                                e.target.type = "password"
+                                e.target.value = `${repeatPassword}`;
+                                e.target.id = "";
+                            }}
+                            onBlur={(e) => {
+                                if (password !== repeatPassword) {
+                                    e.target.type = "text"
+                                    e.target.value = "password doesn't match"
+                                    e.target.id = "input-error";
+                                }
+                            }}
                         />
                     </div>
                     <div className="modal-form__group">
@@ -127,6 +176,17 @@ const AddOrEditUser = ({ user }: IAddOrEditUserProps) => {
                             className="add-coupon-input"
                             onChange={(e) => setFirstName(e.target.value)}
                             required
+                            onFocus={(e) => {
+                                e.target.value = `${firstName}`;
+                                e.target.id = "";
+                            }}
+                            onBlur={(e) => {
+                                if (!NAME_REGEX.exec(e.target.value)) {
+                                    e.target.type = "text"
+                                    e.target.value = "invalid name"
+                                    e.target.id = "input-error";
+                                }
+                            }}
                         />
                     </div>
                     <div className="modal-form__group">
@@ -138,6 +198,17 @@ const AddOrEditUser = ({ user }: IAddOrEditUserProps) => {
                             className="add-coupon-input"
                             onChange={(e) => setLastName(e.target.value)}
                             required
+                            onFocus={(e) => {
+                                e.target.value = `${lastName}`;
+                                e.target.id = "";
+                            }}
+                            onBlur={(e) => {
+                                if (!NAME_REGEX.exec(e.target.value)) {
+                                    e.target.type = "text"
+                                    e.target.value = "invalid name"
+                                    e.target.id = "input-error";
+                                }
+                            }}
                         />
                     </div>
                     <div className="modal-form__group">
@@ -149,28 +220,39 @@ const AddOrEditUser = ({ user }: IAddOrEditUserProps) => {
                             className="add-coupon-input"
                             onChange={(e) => setPhone(e.target.value)}
                             required
-                        />
-                    </div>
-                    <div className="modal-form__group">
-                        <input
-                            type="text"
-                            placeholder={user?.role ? user.role : "Enter Role"}
-                            name="role"
-                            id="role"
-                            className="add-coupon-input"
-                            onChange={(e) => setRole(e.target.value)}
-                            required
+                            onFocus={(e) => {
+                                e.target.value = `${phone}`;
+                                e.target.id = "";
+                            }}
+                            onBlur={(e) => {
+                                if (!PHONE_REGEX.exec(e.target.value)) {
+                                    e.target.type = "text"
+                                    e.target.value = "invalid phone number"
+                                    e.target.id = "input-error";
+                                }
+                            }}
                         />
                     </div>
 
-                    <CompaniesDropDown
-                        selectedCompany={setCompanyId}
-                        defaultCompanyId={user?.companyId === undefined ? 0 : user.companyId} />
+                    <div className="modal-form__group dropdown-form-group">
+                        <label>Company</label>
+                        <CompaniesDropDown
+                            selectedCompany={setCompanyId}
+                            defaultCompanyId={user?.companyId === undefined ? 0 : user.companyId} />
+                    </div>
 
-                    {error !== "" && <div className="error">{error}</div>}
+                    <div className="modal-form__group dropdown-form-group">
+                        <label>Role</label>
+                        <RolesDropDown
+                            selectedRole={setRole}
+                            defaultRole={user?.role} />
+                    </div>
+
+
+                    {error !== "" && <div className="form-error">{error}</div>}
                     <div className="">
-                        {!user?.id && <input type="button" className="add-coupon-button" value="add coupon" onClick={onAddUser} />}
-                        {user?.id && <input type="button" className="add-coupon-button" value="edit coupon" onClick={onEditUser} />}
+                        {!user?.id && <input type="button" className="add-coupon-button" value="add user" onClick={onAddUser} disabled={repeatPassword !== password} />}
+                        {user?.id && <input type="button" className="add-coupon-button" value="edit user" onClick={onEditUser} disabled={repeatPassword !== password} />}
                     </div>
                 </div>
             </form>

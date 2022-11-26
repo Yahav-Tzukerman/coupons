@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import { CODE_REGEX, NAME_REGEX } from "../../../constants/matcher";
 import { ICompanyList } from "../../../models/ICompanyList";
 import { ICoupon } from "../../../models/ICoupon";
 import CouponsService from "../../../services/coupon.service";
@@ -119,7 +120,18 @@ const AddOrEditCoupon = ({ coupon }: IAddCouponProps) => {
                             id="code"
                             className="add-coupon-input"
                             onChange={(e) => setCode(e.target.value)}
+                            disabled={coupon ? true : false}
                             required
+                            onFocus={(e) => {
+                                e.target.value = `${code}`;
+                                e.target.id = "";
+                            }}
+                            onBlur={(e) => {
+                                if (!CODE_REGEX.exec(e.target.value)) {
+                                    e.target.value = "uppercase letters & numbers, length 2-16"
+                                    e.target.id = "input-error";
+                                }
+                            }}
                         />
                     </div>
                     <div className="modal-form__group">
@@ -131,6 +143,16 @@ const AddOrEditCoupon = ({ coupon }: IAddCouponProps) => {
                             className="add-coupon-input"
                             onChange={(e) => setTitle(e.target.value)}
                             required
+                            onFocus={(e) => {
+                                e.target.value = `${title}`;
+                                e.target.id = "";
+                            }}
+                            onBlur={(e) => {
+                                if (e.target.value.length < 2 || e.target.value.length > 30) {
+                                    e.target.value = "Title: length 2-30"
+                                    e.target.id = "input-error";
+                                }
+                            }}
                         />
                     </div>
                     <div className="modal-form__group">
@@ -142,6 +164,16 @@ const AddOrEditCoupon = ({ coupon }: IAddCouponProps) => {
                             className="add-coupon-input"
                             onChange={(e) => setDescription(e.target.value)}
                             required
+                            onFocus={(e) => {
+                                e.target.value = `${description}`;
+                                e.target.id = "";
+                            }}
+                            onBlur={(e) => {
+                                if (e.target.value.length < 2 || e.target.value.length > 255) {
+                                    e.target.value = "Description: length 2-255"
+                                    e.target.id = "input-error";
+                                }
+                            }}
                         />
                     </div>
                     <div className="modal-form__group">
@@ -179,6 +211,18 @@ const AddOrEditCoupon = ({ coupon }: IAddCouponProps) => {
                             className="add-coupon-input"
                             onChange={(e) => setAmount(parseInt(e.target.value))}
                             required
+                            onFocus={(e) => {
+                                e.target.type = "number";
+                                e.target.value = `${amount}`;
+                                e.target.id = "";
+                            }}
+                            onBlur={(e) => {
+                                if (amount < 1) {
+                                    e.target.type = "text";
+                                    e.target.value = "Amount: must be 1 or greater"
+                                    e.target.id = "input-error";
+                                }
+                            }}
                         />
                     </div>
                     <div className="modal-form__group">
@@ -190,6 +234,18 @@ const AddOrEditCoupon = ({ coupon }: IAddCouponProps) => {
                             className="add-coupon-input"
                             onChange={(e) => setPrice(parseInt(e.target.value))}
                             required
+                            onFocus={(e) => {
+                                e.target.type = "number";
+                                e.target.value = `${price}`;
+                                e.target.id = "";
+                            }}
+                            onBlur={(e) => {
+                                if (price <= 0) {
+                                    e.target.type = "text";
+                                    e.target.value = "Price: must be greater then 0"
+                                    e.target.id = "input-error";
+                                }
+                            }}
                         />
                     </div>
                     <div className="modal-form__group">
@@ -201,6 +257,16 @@ const AddOrEditCoupon = ({ coupon }: IAddCouponProps) => {
                             className="add-coupon-input"
                             onChange={(e) => setImageUrl(e.target.value)}
                             required
+                            onFocus={(e) => {
+                                e.target.value = `${imageUrl}`;
+                                e.target.id = "";
+                            }}
+                            onBlur={(e) => {
+                                if (!imageUrl.endsWith('.png') && !imageUrl.endsWith('.jpg')) {
+                                    e.target.value = "Image url must end with .png"
+                                    e.target.id = "input-error";
+                                }
+                            }}
                         />
                     </div>
                     <div className="modal-form__group dropdown-form-group">
@@ -218,8 +284,8 @@ const AddOrEditCoupon = ({ coupon }: IAddCouponProps) => {
                     </div>
                     {error !== "" && <div className="form-error">{error}</div>}
                     <div className="">
-                        {!coupon?.id && <input type="button" className="add-coupon-button" value="add coupon" onClick={onAddCoupon} />}
-                        {coupon?.id && <input type="button" className="add-coupon-button" value="edit coupon" onClick={onEditCoupon} />}
+                        {!coupon?.id && <input id="form-button" type="button" className="add-coupon-button" value="add coupon" onClick={onAddCoupon} />}
+                        {coupon?.id && <input id="form-button" type="button" className="add-coupon-button" value="edit coupon" onClick={onEditCoupon} />}
                     </div>
                 </div>
             </form>

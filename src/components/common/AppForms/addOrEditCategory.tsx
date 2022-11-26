@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import { NAME_REGEX } from "../../../constants/matcher";
 import { ICategory } from "../../../models/ICategory";
 import CategoriesService from "../../../services/category.service";
 import './Form.css';
@@ -78,10 +79,20 @@ const AddOrEditCategory = ({ category }: IAddOrEditCategoryProps) => {
                             className="add-coupon-input"
                             onChange={(e) => setName(e.target.value)}
                             required
+                            onFocus={(e) => {
+                                e.target.value = `${name}`;
+                                e.target.id = "";
+                            }}
+                            onBlur={(e) => {
+                                if (!NAME_REGEX.exec(e.target.value)) {
+                                    e.target.value = "category is invalid"
+                                    e.target.id = "input-error";
+                                }
+                            }}
                         />
                     </div>
 
-                    {error !== "" && <div className="error">{error}</div>}
+                    {error !== "" && <div className="form-error">{error}</div>}
                     <div className="">
                         {!category?.id && <input type="button" className="add-coupon-button" value="add category" onClick={onAddCategory} />}
                         {category?.id && <input type="button" className="add-coupon-button" value="edit category" onClick={onEditCategory} />}
