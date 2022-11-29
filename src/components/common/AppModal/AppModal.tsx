@@ -21,7 +21,7 @@ const AppModal = ({ title, children, edit, button }: IAppModalProps) => {
 
     return (
         <>
-            {button ? <input type="button" value="edit" className={button} onClick={handleShow} /> : <input type="button" className="material-symbols-outlined" value={edit ? 'edit' : 'add'} data-tip="delete coupon" data-place="left" onClick={handleShow} />}
+            {button ? <input type="button" value={button} className={button} onClick={handleShow} /> : <input type="button" className="material-symbols-outlined" value={edit ? 'edit' : 'add'} data-tip="delete coupon" data-place="left" onClick={handleShow} />}
             <Modal
                 show={visible}
                 onHide={handleHide}

@@ -1,16 +1,31 @@
 import { Col, Row, Table, Image } from "react-bootstrap";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import './cart.css';
 import '../../assets/styles.css'
 import { IPurchaseRequest } from '../../models/IPurchaseRequest';
 import { AppState } from "../../redux/app-state";
 import PurchaseService from "../../services/purchase.service";
 import CartCard from "./CartCard/cartCard";
+import { ActionType } from "../../redux/action-type";
+import { useEffect } from "react";
+import AppModal from "../common/AppModal/AppModal";
+import { Link } from "react-router-dom";
+import Checkout from "./checkout/checkout";
 
 
 const Cart = () => {
 
     const cart: IPurchaseRequest[] = useSelector((state: AppState) => state.cart);
+    const dispatch = useDispatch();
+
+    function onRemoveItem(id: number) {
+        let updatedCart = cart.filter(cartItem => cartItem.couponId !== id);
+        // dispatch({ type: ActionType.ON_REMOVE_CART_ITEM, payload: { ...updatedCart } });
+        localStorage.setItem('cart', JSON.stringify(updatedCart));
+        window.location.reload();
+    }
+
+    // dispatch({ type: ActionType.OnRemoveItem, payload: ... });
 
     let purchaseObj: IPurchaseRequest = {
         userId: 1,
@@ -19,33 +34,58 @@ const Cart = () => {
     }
 
     function onPurchase() {
-        for (let i = 0; i < cart.length; i++) {
-            PurchaseService.purchase(cart[i] ? cart[i] : purchaseObj).then((response) => {
-                console.log(response.data);
-                localStorage.setItem('purchase', JSON.stringify(response.data));
 
-            }).catch((error) => {
-                localStorage.setItem('purchaseError', JSON.stringify(error.response));
-                alert(error.response.data.message)
-            });
-        }
-        localStorage.removeItem('cart');
-        window.location.reload();
+
+
+
+
+        // for (let i = 0; i < cart.length; i++) {
+        //     PurchaseService.purchase(cart[i] ? cart[i] : purchaseObj).then((response) => {
+        //         console.log(response.data);
+        //         localStorage.setItem('purchase', JSON.stringify(response.data));
+
+        //     }).catch((error) => {
+        //         localStorage.setItem('purchaseError', JSON.stringify(error.response));
+        //         alert(error.response.data.message)
+        //     });
+        // }
+        // localStorage.removeItem('cart');
+        // window.location.reload();
     }
+
+
+
+    useEffect(() => {
+
+    }, [cart])
 
     return (
         <div className="cart-container">
             <h5 className="customer-page-cart-header">
                 cart
             </h5>
+            {cart.length === 0 && (
+                <div className="empty">
+                    <h5>Nothing here yet</h5>
+                    <Link to="/coupons">To Coupons</Link>
+                </div>
+            )}
             {cart.map(purchase => (
                 <CartCard
                     key={`cart-card${purchase.couponId * purchase.userId * purchase.amount * Math.random()}`}
                     couponId={purchase.couponId}
                     amount={purchase.amount}
+                    onRemoveItem={onRemoveItem}
                 />
             ))}
-            <input type="button" value="Purchase Now!" className="cart-purchase" onClick={onPurchase} />
+            {cart.length !== 0 &&
+                <AppModal
+                    title="CHECKOUT"
+                    button="TO CHECKOUT"
+                >
+                    <Checkout />
+                </AppModal>}
+
         </div>
 
     );

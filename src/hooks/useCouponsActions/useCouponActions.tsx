@@ -8,6 +8,8 @@ import { useNavigate } from "react-router-dom";
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import "./useCouponAction.css";
+import { createListenerMiddleware } from "@reduxjs/toolkit";
+import { convertTypeAcquisitionFromJson } from "typescript";
 
 
 function useCouponsActions() {
@@ -23,7 +25,7 @@ function useCouponsActions() {
         })
     };
 
-    function onBuyCoupon(id: number, amount: number) {
+    async function onBuyCoupon(id: number, amount: number) {
 
         let purchaseRequestObj: IPurchaseRequest = {
             couponId: id,
@@ -31,24 +33,38 @@ function useCouponsActions() {
             amount: amount,
         }
 
-        cart.push(purchaseRequestObj);
-        dispatch({ type: ActionType.ADD_TO_CART, payload: { ...cart } });
-        localStorage.setItem('cart', JSON.stringify(cart));
+        let checkIfExist = cart.filter(cartItem => cartItem.couponId === id);
 
-        confirmAlert({
-            title: 'Added to cart',
-            message: 'Do you want to go to cart?',
-            buttons: [
-                {
-                    label: 'Go to cart',
-                    onClick: () => navigate("/profile")
-                },
-                {
-                    label: 'Stay here',
-                    onClick: () => window.location.reload()
-                }
-            ]
-        });
+        let coupon = await CouponsService.getCouponById(id).then(response => response.data);
+
+        if (coupon.amount >= amount) {
+            if (checkIfExist.length === 0) {
+                cart.push(purchaseRequestObj);
+            }
+            else {
+                cart.map(cartItem => {
+                    if (cartItem.couponId === id) {
+                        cartItem.amount = amount;
+                    }
+                })
+            }
+            dispatch({ type: ActionType.ADD_TO_CART, payload: { ...cart } });
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            confirmAlert({
+                title: 'Added to cart',
+                message: 'Do you want to go to cart?',
+                buttons: [
+                    {
+                        label: 'Go to cart',
+                        onClick: () => navigate("/profile")
+                    },
+                    {
+                        label: 'Stay here',
+                    }
+                ]
+            });
+        }
     };
 
     function deleteRequest(id: number) {

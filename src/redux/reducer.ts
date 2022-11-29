@@ -22,6 +22,7 @@ export function reduce(oldAppState: AppState = appStateInitialValue, action: Act
     };
 
     let decodedToken = null;
+    let cart = null;
     let state = null;
 
     switch (action.type) {
@@ -39,7 +40,10 @@ export function reduce(oldAppState: AppState = appStateInitialValue, action: Act
             let coupons: ICoupon[] = action.payload;
             return { ...oldAppState, ...coupons }
         case ActionType.ADD_TO_CART:
-            let cart = action.payload.cart;
+            cart = action.payload.cart;
+            return { ...oldAppState, ...cart }
+        case ActionType.ON_REMOVE_CART_ITEM:
+            cart = action.payload;
             return { ...oldAppState, ...cart }
         default:
             return oldAppState

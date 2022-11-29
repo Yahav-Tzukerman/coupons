@@ -54,3 +54,7 @@
     padding: 0;
     margin: 0;
 }
+
+.remove-item {
+    background-color: red;
+}

@@ -66,7 +66,7 @@ const CouponCard = ({
                     <Col sm={6}>
                         {(decodedToken?.roles === "ROLE_CUSTOMER") && <input type="button" value="-" className={isGrayed ? "grayed-action" : "action-button"} onClick={() => setAmount(amount - 1)} disabled={isGrayed || amount <= 1} />}
                         {(decodedToken?.roles === "ROLE_CUSTOMER") && <input id="amount" type="button" className="action-button" value={amount} />}
-                        {(decodedToken?.roles === "ROLE_CUSTOMER") && <input type="button" value="+" className={isGrayed ? "grayed-action" : "action-button"} onClick={() => setAmount(amount + 1)} disabled={isGrayed || amount >= 99} />}
+                        {(decodedToken?.roles === "ROLE_CUSTOMER") && <input type="button" value="+" className={isGrayed ? "grayed-action" : "action-button"} onClick={() => setAmount(amount + 1)} disabled={isGrayed || amount >= data.amount} />}
 
                     </Col>
                     <Col sm={6}>
