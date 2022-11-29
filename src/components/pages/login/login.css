@@ -1,12 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
 
 .login__page {
+    width: 100vw;
     height: 90vh;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    top: 12vh;
 }
 
 .container-login {
@@ -17,6 +13,7 @@
 }
 
 .screen-login {
+    top: 20vh;
     background: linear-gradient(90deg, rgba(255, 198, 119, 0.214), rgba(128, 86, 28, 0.175));
     position: relative;
     height: 300px;
@@ -44,45 +41,29 @@
 }
 
 .screen__background__shape_login {
-    transform: rotate(65deg);
     position: absolute;
 }
 
 .screen__background__shape1_login {
-    height: 220px;
-    width: 320px;
-    background: linear-gradient(90deg, rgba(245, 185, 102, 0.2), rgb(152, 111, 54, 0.2));
-    top: -115px;
-    left: 10px;
+    height: 300px;
+    width: 340px;
+    border-bottom-left-radius: 26px;
+    border-top-left-radius: 26px;
+    background: rgb(255, 187, 114);
+    left: 0;
     box-shadow: 0 0 5px rgb(255, 187, 114, 0.2);
 }
-
-.screen__background__shape2_login {
-    height: 220px;
-    width: 220px;
-    background: linear-gradient(90deg, rgba(245, 185, 102, 0.2), rgb(157, 119, 65, 0.2));
-    top: -172px;
-    right: -20px;
-    box-shadow: 0 0 5px rgb(255, 187, 114, 0.2);
-}
-
-.screen__background__shape3_login {
-    height: 700px;
-    width: 190px;
-    background: linear-gradient(90deg, rgba(245, 185, 102, 0.2), rgb(157, 119, 65, 0.2));
-    top: -14px;
-    right: 180px;
-    box-shadow: 0 0 5px rgb(255, 187, 114, 0.2);
-}
-
 
 .login-login {
-    /* width: 320px; */
-    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .login__field-login {
-    padding: 10px 120px;
+    top: 1rem;
+    padding: 10px;
     position: relative;
 }
 
@@ -93,13 +74,15 @@
     background: none;
     padding: 5px;
     font-weight: 300;
-    width: 100%;
+    width: 250px;
     transition: .2s;
     text-align: center;
 }
 
 .login__input::placeholder {
-    color: #fff;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    letter-spacing: 1px;
 }
 
 input {
@@ -111,12 +94,14 @@ input {
 .login__input:hover {
     outline: none;
     border-bottom-color: rgb(134, 76, 0);
+    background: rgba(128, 86, 28, 0.251);
+    border-radius: 25px;
 }
 
 
 .login__submit {
     font-size: 14px;
-    margin-top: 20px;
+    margin-top: 40px;
     padding: 10px;
     border-radius: 26px;
     text-transform: uppercase;
@@ -124,9 +109,9 @@ input {
     text-align: center;
     width: 250px;
     color: #ffffff;
-    background: linear-gradient(180deg, rgba(130, 67, 0, 0.5), rgb(255, 181, 78), rgb(130, 67, 0, 0.5));
-    box-shadow: 0 0 10px rgb(255, 187, 114);
-    border: 1px solid rgb(177, 138, 96);
+    background: rgb(255, 187, 114);
+    box-shadow: 0 0 5px rgb(255, 255, 255);
+    border: none;
     cursor: pointer;
     transition: .2s;
 }
@@ -134,8 +119,8 @@ input {
 .login__submit:active,
 .login__submit:focus,
 .login__submit:hover {
-    background: linear-gradient(180deg, rgba(130, 67, 0, 0.5), rgb(255, 153, 10), rgb(130, 67, 0, 0.5));
-    outline: none;
+    background: rgb(255, 132, 0);
+    box-shadow: 0 0 7px rgb(255, 255, 255);
 }
 
 
@@ -143,7 +128,7 @@ input {
     position: relative;
     width: 250px;
     padding: 20px;
-    left: 9vw;
+    left: 2.5rem;
     color: #fff;
 }
 
@@ -156,9 +141,48 @@ input {
 
 .login-register-navigator:hover {
     transform: scale(1.02);
-    color: #fff; 
+    color: #fff;
 }
 
+
+.social-login {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 120px;
+    width: 160px;
+    text-align: center;
+    top: 1rem;
+    color: #fff;
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-login__icon {
+    height: 35px;
+    width: 35px;
+    padding: 4px;
+    margin: 0.75rem;
+    color: #fff;
+    text-decoration: none;
+    text-shadow: 0px 0px 8px #313131;
+    border: 2px solid rgb(255, 187, 114);
+    background-color: rgba(255, 187, 114, 0.174);
+    border-radius: 100%;
+}
+
+.social-login__icon:hover {
+    background-color: rgb(255, 187, 114);
+    transform: scale(1.1);
+    color: #FFF
+}
 
 
 

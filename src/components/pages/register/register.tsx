@@ -269,17 +269,23 @@ export default function Register() {
                             onBlur={(e) => (e.target.type = "text")}
                         />
                     </div>
-                    <div className="dropdown-form-group">
-                        <label className="register-label">Gender</label>
-                        <GenderDropDown
-                            selectedGender={setGender}
-                            defaultGender={gender} />
+                    <div className="gender">
+                        <h1>Gender</h1>
+                        <input type="radio" value="MALE" id="male" name="gender" onChange={e => setGender(e.target.value)} />
+                        <label className="gender__label">Male</label>
+                        <input type="radio" value="FEMALE" id="female" name="gender" onChange={e => setGender(e.target.value)} />
+                        <label className="gender__label">Female</label>
+                        <input type="radio" value="OTHER" id="other" name="gender" onChange={e => setGender(e.target.value)} />
+                        <label className="gender__label">Other</label>
                     </div>
-                    <div className="dropdown-form-group">
-                        <label className="register-label">Status</label>
-                        <MaritalStatusDropDown
-                            selectedMaritalStatus={setMaritalStatus}
-                            defaultMaritalStatus={maritalStatus} />
+                    <div className="gender">
+                        <h1>Marital Status</h1>
+                        <input type="radio" value="SINGLE" id="single" name="marital_status" onChange={e => setMaritalStatus(e.target.value)} />
+                        <label className="gender__label">Single</label>
+                        <input type="radio" value="MARRIED" id="married" name="marital_status" onChange={e => setMaritalStatus(e.target.value)} />
+                        <label className="gender__label">Married</label>
+                        <input type="radio" value="OTHER" id="other" name="marital_status" onChange={e => setGender(e.target.value)} />
+                        <label className="gender__label">Other</label>
                     </div>
 
                     {error !== "" && <div className="form-error">{error}</div>}

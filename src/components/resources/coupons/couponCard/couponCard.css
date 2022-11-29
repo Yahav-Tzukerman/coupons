@@ -1,5 +1,5 @@
 .card {
-    background: linear-gradient(to right, rgb(113, 58, 0), rgba(255, 181, 77, 0.8), rgb(113, 58, 0));
+    background: linear-gradient(to right, rgb(140, 57, 2), rgba(215, 125, 0, 0.8), rgb(140, 57, 2));
     height: 380px;
     width: 250px;
     border-radius: 16px;
@@ -7,20 +7,20 @@
     display: inline-block;
     margin: 1vw;
     color: white;
+    border: 1px solid rgba(0, 0, 0, 0.2);
     box-shadow: 0 0 10px 7px rgba(0, 0, 0, 0.3);
 }
 
 .price {
     color: rgb(255, 255, 255);
     display: inline-block;
-    margin-right: 5px;
-    margin-top: 2px;
-    height: 30px;
+    margin-top: 3px;
+    height: 20px;
     width: 120px;
-    padding: 7px;
+    padding: 3px 6px;
     border-radius: 16px;
-    background: rgb(149, 90, 27);
-    border: 1px solid rgb(177, 138, 96);
+    background-color: rgba(87, 38, 1, 0.4);
+    border: 1px solid rgba(0, 0, 0, 0.6);
     float: right;
 }
 
@@ -28,24 +28,22 @@
 .card-badge {
     margin-right: 5px;
     margin-top: 5px;
-    height: 20px;
+    height: 12px;
     width: 70px;
-    padding: 4px;
     border-radius: 16px;
-    background: rgb(149, 90, 27);
-    border: 1px solid rgb(177, 138, 96);
+    background-color: rgba(87, 38, 1, 0.4);
+    border: 1px solid rgba(0, 0, 0, 0.6);
     float: right;
 }
 
 .card-badge-company {
     margin-right: 2px;
     margin-top: 5px;
-    height: 20px;
+    height: 12px;
     width: 70px;
-    padding: 4px;
     border-radius: 16px;
-    background: rgb(149, 90, 27);
-    border: 1px solid rgb(177, 138, 96);
+    background-color: rgba(87, 38, 1, 0.4);
+    border: 1px solid rgba(0, 0, 0, 0.6);
     float: right;
 }
 
@@ -57,8 +55,8 @@
     outline: 0;
     padding: 12px;
     color: rgb(255, 255, 255);
-    background: linear-gradient(to right, rgb(73, 38, 0), rgba(172, 100, 0, 0.8), rgb(73, 38, 0));
-    backdrop-filter: blur(20px);
+    background-color: rgba(87, 38, 1, 0.4);
+    border: 1px solid rgba(0, 0, 0, 0.2);
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     text-align: center;
@@ -85,13 +83,20 @@
 }
 
 .image-container img:hover {
-    scale: 2.5;
+    scale: 2;
     z-index: 5;
 }
 
 .card-body {
-    height: 92px;
+    height: 115px;
     padding: 6px;
+}
+
+.price-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
 }
 
 .action-button {
@@ -99,12 +104,11 @@
     width: 30px;
     height: 30px;
     margin-left: 7px;
-    margin-top: 2px;
     border-radius: 30px;
     font-size: 10px;
     font-weight: 300;
-    background: rgb(149, 90, 27);
-    border: 1px solid rgb(177, 138, 96);
+    background-color: rgba(87, 38, 1, 0.4);
+    border: 1px solid rgba(0, 0, 0, 0.6);
     float: left
 }
 
@@ -132,9 +136,10 @@
     color: black;
     font-weight: 500;
     font-size: 10px;
-    height: 20px;
-    width: 20px;
-    border-radius: 20px;
+    height: 30px;
+    width: 30px;
+    padding: 6px 10px;
+    border-radius: 100%;
     border: 1px solid black;
     background: rgb(85, 14, 14);
     background: linear-gradient(90deg, rgba(139, 10, 10, 0.877) 0%, rgb(231, 22, 22) 46%, rgb(250, 0, 29) 100%);
@@ -144,6 +149,6 @@
 .card:hover .btn-delete {
     position: absolute;
     display: flex;
-    left: 2px;
-    top: 5px;
+    right: -15px;
+    top: -15px;
 }

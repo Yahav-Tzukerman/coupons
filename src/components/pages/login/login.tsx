@@ -8,6 +8,9 @@ import { useNavigate } from 'react-router-dom';
 import { AppState } from "../../../redux/app-state";
 import UserService from "../../../services/users.service";
 import { ActionType } from "../../../redux/action-type";
+import { Col, Row } from "react-bootstrap";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFacebook, faTwitter, faInstagram, faGoogle } from '@fortawesome/free-brands-svg-icons'
 
 
 export default function Login() {
@@ -44,32 +47,55 @@ export default function Login() {
         <div className="login__page">
             <div className="container-login">
                 <div className="screen-login">
-                    <div className="screen__content-login">
-                        <form className="login-login">
-                            <div className="login__field-login">
-                                <i className="login__icon fas fa-user"></i>
-                                <input onChange={(event) => setUsername(event.target.value)} type="text" className="login__input" placeholder="User name / Email" required />
+                    <Row>
+                        <Col sm={8}>
+                            <div className="screen__content-login">
+                                <form className="login-login">
+                                    <div className="login__field-login">
+                                        <i className="login__icon fas fa-user"></i>
+                                        <input onChange={(event) => setUsername(event.target.value)} type="text" className="login__input" placeholder="User name / Email" required />
+                                    </div>
+                                    <div className="login__field-login">
+                                        <i className="login__icon fas fa-lock"></i>
+                                        <input onChange={(event) => setPassword(event.target.value)} type="password" className="login__input" placeholder="Password" required />
+                                    </div>
+                                    <Link to={currentUser?.token !== "" ? '/' : '/login'}>
+                                        <input type="button" className="button login__submit" value="Log In Now" onClick={onLogin} />
+                                    </Link>
+                                </form>
+                                <div className="login-register-navigator-header">
+                                    <h3>New here?</h3>
+                                    <div className="login-register-navigator">
+                                        <Link to={"/register"}>Create Account</Link>
+                                    </div>
+                                </div>
                             </div>
-                            <div className="login__field-login">
-                                <i className="login__icon fas fa-lock"></i>
-                                <input onChange={(event) => setPassword(event.target.value)} type="password" className="login__input" placeholder="Password" required />
+                            <div className="screen__background">
+                                <span className="screen__background__shape_login screen__background__shape3_login"></span>
+                                <span className="screen__background__shape_login screen__background__shape2_login"></span>
+                                <span className="screen__background__shape_login screen__background__shape1_login"></span>
                             </div>
-                            <Link to={currentUser?.token !== "" ? '/' : '/login'}>
-                                <input type="button" className="button login__submit" value="Log In Now" onClick={onLogin} />
-                            </Link>
-                        </form>
-                        <div className="login-register-navigator-header">
-                            <h3>New here?</h3>
-                            <div className="login-register-navigator">
-                                <Link to={"/register"}>Create Account</Link>
+                        </Col>
+                        <Col sm={4}>
+                            <div className="social-login">
+                                <h3>log in via</h3>
+                                <div className="social-icons">
+                                    <a href="https://www.instagram.com/" className="social-login__icon fab fa-instagram">
+                                        <FontAwesomeIcon icon={faInstagram} />
+                                    </a>
+                                    <a href="https://www.facebook.com/" className="social-login__icon fab fa-facebook">
+                                        <FontAwesomeIcon icon={faFacebook} />
+                                    </a>
+                                    <a href="https://twitter.com/" className="social-login__icon fab fa-twitter">
+                                        <FontAwesomeIcon icon={faTwitter} />
+                                    </a>
+                                    <a href="https://google.com/" className="social-login__icon fab fa-twitter">
+                                        <FontAwesomeIcon icon={faGoogle} />
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div className="screen__background">
-                        <span className="screen__background__shape_login screen__background__shape3_login"></span>
-                        <span className="screen__background__shape_login screen__background__shape2_login"></span>
-                        <span className="screen__background__shape_login screen__background__shape1_login"></span>
-                    </div>
+                        </Col>
+                    </Row>
                 </div>
             </div>
         </div>

@@ -1,21 +1,21 @@
 .register_page {
-    position: relative;
+    width: 100vw;
+    height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
-    min-height: 90vh;
 }
 
 .register__container {
+    top: 15vh;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 500px;
-    height: 800px;
+    width: 400px;
+    height: 580px;
     padding: 2px;
-    background: linear-gradient(90deg, rgba(255, 198, 119, 0.2), rgba(128, 86, 28, 0.2));
+    background: rgba(255, 187, 114, 0.489);
     box-shadow: 0 0 15px rgb(255, 187, 114);
     backdrop-filter: blur(11.7px);
     -webkit-backdrop-filter: blur(12px);
@@ -39,8 +39,6 @@
     margin-top: 0;
     width: 300px;
     padding: 3px;
-    margin: .5vh;
-    margin-left: 2vh;
 }
 
 .form__field {
@@ -49,7 +47,7 @@
     border: 0;
     border-bottom: 2px solid rgb(255, 255, 255);
     outline: 0;
-    font-size: 16px;
+    font-size: 14px;
     color: white;
     padding: 1px 0;
     background: transparent;
@@ -68,6 +66,7 @@
     border-image: linear-gradient(to right, #11998e, #38ef7d);
     border-image-slice: 1;
 }
+
 
 .form__label:focus {
     position: absolute;
@@ -100,19 +99,25 @@
 }
 
 .register__submit {
-    color: rgb(255, 255, 255);
-    display: inline-block;
-    margin-top: 15px;
-    width: 150px;
-    padding: 2px;
-    border-radius: 16px;
-    background: linear-gradient(180deg, rgba(130, 67, 0, 0.5), rgba(255, 181, 78, 0.39), rgb(130, 67, 0, 0.5));
-    box-shadow: 0 0 10px rgb(255, 187, 114);
-    border: 1px solid rgb(177, 138, 96);
+    font-size: 14px;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 26px;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
+    width: 250px;
+    color: #ffffff;
+    background: rgb(255, 187, 114);
+    box-shadow: 0 0 5px rgb(255, 255, 255);
+    border: none;
+    cursor: pointer;
+    transition: .2s;
 }
 
 .register__submit:hover {
-    background: linear-gradient(180deg, rgba(130, 67, 0, 0.5), rgb(255, 153, 10), rgb(130, 67, 0, 0.5));
+    background: rgb(255, 132, 0);
+    box-shadow: 0 0 7px rgb(255, 255, 255);
 }
 
 
@@ -125,49 +130,6 @@ h1.register-heading {
     z-index: 5;
 }
 
-
-.screen__background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 0;
-    -webkit-clip-path: inset(0 0 0 0);
-    clip-path: inset(0 0 0 0);
-}
-
-.screen__background__shape {
-    transform: rotate(65deg);
-    position: absolute;
-}
-
-.screen__background__shape1 {
-    height: 520px;
-    width: 320px;
-    background: linear-gradient(90deg, rgba(245, 185, 102, 0.2), rgb(152, 111, 54, 0.2));
-    top: -290px;
-    left: 10px;
-    box-shadow: 0 0 5px rgb(255, 187, 114, 0.2);
-}
-
-.screen__background__shape2 {
-    height: 520px;
-    width: 320px;
-    background: linear-gradient(90deg, rgba(152, 111, 54, 0.2), rgb(245, 185, 102, 0.2));
-    top: 330px;
-    right: -20px;
-    box-shadow: 0 0 5px rgb(255, 187, 114, 0.2);
-}
-
-.screen__background__shape3 {
-    height: 700px;
-    width: 190px;
-    background: linear-gradient(90deg, rgba(245, 185, 102, 0.2), rgb(157, 119, 65, 0.2));
-    top: -24px;
-    right: 180px;
-    box-shadow: 0 0 5px rgb(255, 187, 114, 0.2);
-}
 
 .register-label {
     display: flex;

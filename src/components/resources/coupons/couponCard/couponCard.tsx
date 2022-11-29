@@ -30,27 +30,24 @@ const CouponCard = ({
 
     return (
         <div className={isGrayed ? "grayed-card" : "card"}>
-            {decodedToken.roles === "ROLE_ADMIN" || decodedToken?.companyId === data.companyId && <Row>
-                <Col sm={12}>
-                    <input type="button" className="btn-delete" value="X" onClick={() => deleteCoupon(data.id)} />
-                </Col>
-            </Row>
-            }
             <Row>
+                {decodedToken.roles === "ROLE_ADMIN" &&
+
+                    <Col sm={12}>
+                        <input type="button" className="btn-delete" value="X" onClick={() => deleteCoupon(data.id)} />
+                    </Col>
+
+                }
                 <Col sm={12}>
                     <div className="countdown-timer">
                         <CountdownTimer targetDate={new Date(data.endDate)} />
                     </div>
                 </Col>
-            </Row>
-            <Row>
                 <Col sm={12}>
                     <div className="image-container">
                         <Image src={data.imageUrl} />
                     </div>
                 </Col>
-            </Row>
-            <Row>
                 <Col sm={12}>
                     <div className="card-badge">
                         <h6 className="card-badge-badge">{data.category}</h6>
@@ -59,53 +56,31 @@ const CouponCard = ({
                         <h6 className="card-badge-badge">{data.companyName}</h6>
                     </div>
                 </Col>
-            </Row>
-            <Row>
                 <Col sm={12}>
                     <div className="card-body">
                         <h5 className="card-title">{data.title}</h5>
                         {/* <h6>{data.description}</h6> */}
                     </div>
                 </Col>
-            </Row>
-            <Row>
-                <Col sm={12}>
-                    <div className="amount-left">
-                        <Row>
-                            <Col sm={6}>
+                <div className="price-container">
+                    <Col sm={6}>
+                        {(decodedToken?.roles === "ROLE_CUSTOMER") && <input type="button" value="-" className={isGrayed ? "grayed-action" : "action-button"} onClick={() => setAmount(amount - 1)} disabled={isGrayed || amount <= 1} />}
+                        {(decodedToken?.roles === "ROLE_CUSTOMER") && <input id="amount" type="button" className="action-button" value={amount} />}
+                        {(decodedToken?.roles === "ROLE_CUSTOMER") && <input type="button" value="+" className={isGrayed ? "grayed-action" : "action-button"} onClick={() => setAmount(amount + 1)} disabled={isGrayed || amount >= 99} />}
 
-                            </Col>
-                            <Col sm={6}>
-                                <div className="price">
-                                    <h5 className="price-tag">Left: {data.amount}</h5>
-                                </div>
-                            </Col>
-                        </Row>
-                    </div>
-                </Col>
-            </Row>
-            <Row>
-                <Col sm={12}>
-                    <div className="price-container">
-                        <Row>
-                            <Col sm={6}>
-                                {(decodedToken?.roles === "ROLE_CUSTOMER") && <input type="button" value="-" className={isGrayed ? "grayed-action" : "action-button"} onClick={() => setAmount(amount - 1)} disabled={isGrayed || amount <= 1} />}
-                                {(decodedToken?.roles === "ROLE_CUSTOMER") && <input id="amount" type="button" className="action-button" value={amount} />}
-                                {(decodedToken?.roles === "ROLE_CUSTOMER") && <input type="button" value="+" className={isGrayed ? "grayed-action" : "action-button"} onClick={() => setAmount(amount + 1)} disabled={isGrayed || amount >= 99} />}
-                            </Col>
-                            <Col sm={6}>
-                                <div className="price">
-                                    <h5 className="price-tag">price: ${amount * data.price}</h5>
-                                </div>
-                            </Col>
-                        </Row>
-                    </div>
-                </Col>
-            </Row>
-            <Row>
+                    </Col>
+                    <Col sm={6}>
+                        <div className="price">
+                            <h5 className="price-tag">Left: {data.amount}</h5>
+                        </div>
+                        <div className="price">
+                            <h5 className="price-tag">price: ${amount * data.price}</h5>
+                        </div>
+                    </Col>
+                </div>
                 <Col sm={12}>
                     {(decodedToken == undefined || decodedToken?.sub == '') && <input type="button" className="buy-btn" value="To Purchase Register Now!" onClick={() => navigate('/register')} />}
-                    {(decodedToken?.roles === "ROLE_CUSTOMER") && <input type="button" className={isGrayed ? "grayed-button" : "buy-btn"} value="Buy" onClick={() => buyCoupon(data.id, amount)} disabled={isGrayed} />}
+                    {(decodedToken?.roles === "ROLE_CUSTOMER") && <input type="button" className={isGrayed ? "grayed-button" : "buy-btn"} value="Add to cart" onClick={() => buyCoupon(data.id, amount)} disabled={isGrayed} />}
                     {(decodedToken?.roles === "ROLE_ADMIN" || decodedToken?.companyId === data.companyId) && (
                         <AppModal
                             title={"Edit Coupon"}
@@ -117,8 +92,9 @@ const CouponCard = ({
                             />
                         </AppModal>)}
                 </Col >
-            </Row >
-        </div>
+            </Row>
+
+        </div >
     );
 };
 

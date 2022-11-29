@@ -6,14 +6,26 @@ import { Col, Row } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPen, faRightFromBracket, faUser } from '@fortawesome/free-solid-svg-icons';
 import { AppState } from '../../../redux/app-state';
+import { useState } from 'react';
 
 const Header = (props: any) => {
 
     const navigate = useNavigate();
     const decodedToken = useSelector((state: AppState) => state.decodedToken);
+    const [navChange, setNavChange] = useState(false);
+
+    const changeNav = () => {
+        if (window.scrollY >= 10) {
+            setNavChange(true)
+        } else {
+            setNavChange(false)
+        }
+    }
+
+    window.addEventListener('scroll', changeNav)
 
     return (
-        <div className='navbar-container'>
+        <div className={navChange ? 'navbar-scroll' : 'navbar-container'}>
             <Row>
                 <div className='nav'>
                     <Col sm={1}>

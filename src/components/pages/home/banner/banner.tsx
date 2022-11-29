@@ -1,6 +1,7 @@
 import './banner.css';
 import { useNavigate } from 'react-router-dom';
 import '../../../../assets/styles.css';
+import { useState } from 'react';
 
 const Banner = () => {
 

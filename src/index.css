@@ -8,15 +8,31 @@
   /* rgb(97, 80, 4), rgb(231, 202, 74), rgb(97, 80, 4) --> gold */
 }
 
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+a {
+  color: unset;
+  text-decoration: none;
+}
+
+a:hover {
+  color: unset;
+  text-decoration: none;
+}
+
 html,
 body {
   margin: 0;
   max-width: 100%;
   overflow-x: hidden;
-}
-
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
 }
