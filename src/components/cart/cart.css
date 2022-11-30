@@ -1,11 +1,11 @@
-/* .cart-container {
+.cart-container {
     min-height: 100vh;
     top: 0;
     display: flex;
     flex-direction: column;
-    justify-content: safe;
+    justify-content: flex-start;
     align-items: center;
-} */
+}
 
 .cart-table th,
 tr,

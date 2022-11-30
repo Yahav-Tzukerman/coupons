@@ -7,6 +7,7 @@ import { IUserResponse } from '../../../../models/IUserResponse';
 import { AppState } from "../../../../redux/app-state";
 import CustomerService from "../../../../services/customer.service";
 import UserService from '../../../../services/users.service';
+import '../../../pages/profilePage/profilePage.css'
 
 
 
@@ -54,36 +55,51 @@ const CustomerDetails = () => {
                 <div className="profile-input-container">
                     <div className="text-container">
                         <h5 className="customer-page-profile">
-                            first name : {user.firstName}
+                            first name :
                         </h5>
+                    </div>
+                    <div className="user-details">
+                        {user.firstName}
                     </div>
                 </div>
                 <div className="profile-input-container">
                     <div className="text-container">
                         <h5 className="customer-page-profile">
-                            last name : {user.lastName}
+                            last name :
                         </h5>
+                    </div>
+                    <div className="user-details">
+                        {user.lastName}
                     </div>
                 </div>
                 <div className="profile-input-container">
                     <div className="text-container">
                         <h5 className="customer-page-profile">
-                            user name : {user.username}
+                            user name :
                         </h5>
+                    </div>
+                    <div className="user-details">
+                        {user.username}
                     </div>
                 </div>
                 <div className="profile-input-container">
                     <div className="text-container">
                         <h5 className="customer-page-profile">
-                            address : {customer.address}
+                            address :
                         </h5>
+                    </div>
+                    <div className="user-details">
+                        {customer.address}
                     </div>
                 </div>
                 <div className="profile-input-container">
                     <div className="text-container">
                         <h5 className="customer-page-profile">
-                            phone: {user.phone}
+                            phone:
                         </h5>
+                    </div>
+                    <div className="user-details">
+                        {user.phone}
                     </div>
                 </div>
             </Col>

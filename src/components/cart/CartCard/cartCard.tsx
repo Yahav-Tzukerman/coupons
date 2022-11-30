@@ -56,34 +56,54 @@ const CartCard = ({ couponId, amount, onRemoveItem }: ICartCardProps) => {
     }, [cart]);
 
     return (
-        <div className="cart-card ">
-            <Row>
-                <Col sm={2}>
-                    <div className="cart-card-price-container">
-                        <div className="amount-group">
-                            <input type="button" value="-" onClick={() => changeAmount(requstedAmount - 1)} disabled={requstedAmount - 1 === 0} />
-                            <p className="cart-card-coupons-amount">{requstedAmount}</p>
-                            <input type="button" value="+" onClick={() => changeAmount(requstedAmount + 1)} disabled={requstedAmount + 1 > coupon.amount} />
-                            <p>{coupon?.price * amount}</p>
+        <div className="cart-cart-cart">
+            <div className="cart-card">
+                <Row>
+                    <Col sm={3}>
+                        <div className="cart-card-image-container">
+                            <Image src={coupon.imageUrl} />
                         </div>
-                        <div className="remove-item">
-                            <input type="button" className="remove-item" value="remove" onClick={() => onRemoveItem(coupon.id)} />
-                        </div>
-                    </div>
-                </Col>
-                <Col sm={7}>
-                    <div className="cart-card-card-body">
-                        <h3 className="cart-card-title">{coupon.title}</h3>
-                        <h4 className="cart-card-description">{coupon.description}</h4>
-                    </div>
-                </Col>
-                <Col sm={3}>
-                    <div className="cart-card-image-container">
-                        <Image src={coupon.imageUrl} />
-                    </div>
-                </Col>
-            </Row>
-        </div >
+                    </Col>
+                    <Col sm={9}>
+                        <Row>
+                            <Col sm={12}>
+                                <div className="cart-card-card-body">
+                                    <div className="body-border">
+                                        <h3 className="cart-card-title">{coupon.title}</h3>
+                                        <h4 className="cart-card-description">{coupon.description}</h4>
+                                    </div>
+                                </div>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col sm={4}>
+                                <div className="cart-card-price-container">
+                                    <div className="amount-group">
+                                        <input type="button" value="-" className="cart-decrease" onClick={() => changeAmount(requstedAmount - 1)} disabled={requstedAmount - 1 === 0} />
+                                        <p className="cart-card-coupons-amount">{requstedAmount}</p>
+                                        <input type="button" value="+" className="cart-increase" onClick={() => changeAmount(requstedAmount + 1)} disabled={requstedAmount + 1 > coupon.amount} />
+                                    </div>
+                                </div>
+                            </Col>
+                            <Col sm={4}>
+                                <div className="cart-card-price-container">
+                                    <div className="amount-group">
+                                        <p className="cart-card-coupons-price">$ {coupon.price * requstedAmount}</p>
+                                    </div>
+                                </div>
+                            </Col>
+                            <Col sm={4}>
+                                <div className="cart-card-price-container">
+                                    <div className="remove-item">
+                                        <input type="button" className="remove-item" value="remove" onClick={() => onRemoveItem(coupon.id)} />
+                                    </div>
+                                </div>
+                            </Col>
+                        </Row>
+                    </Col>
+                </Row>
+            </div >
+        </div>
     );
 }
 
