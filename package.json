@@ -18,6 +18,7 @@
     "@types/react-redux": "^7.1.24",
     "axios": "^1.1.3",
     "bootstrap": "^5.2.2",
+    "chart.js": "^3.9.1",
     "fortawesome": "^0.0.1-security",
     "jwt-decode": "^3.1.2",
     "react": "^18.2.0",

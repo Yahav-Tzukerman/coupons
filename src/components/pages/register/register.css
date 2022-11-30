@@ -37,13 +37,13 @@
     position: relative;
     padding: 16px;
     margin-top: 0;
-    width: 300px;
+    width: 400px;
     padding: 3px;
 }
 
 .form__field {
     font-family: inherit;
-    width: 100%;
+    width: 60%;
     border: 0;
     border-bottom: 2px solid rgb(255, 255, 255);
     outline: 0;

@@ -87,6 +87,7 @@ export default function Register() {
 
     return (
         <div className="register_page">
+
             <div className="register__container">
                 <h1 className="register-heading">Register Now</h1>
                 <form className="register-form33">

@@ -5,6 +5,7 @@ import { AppState } from "../../../../redux/app-state";
 import Cart from "../../../cart/cart";
 import CustomerDetails from "../../../resources/customers/CustomerDetails/customerDetails";
 import '../../profilePage/profilePage.css';
+import '../../../../assets/styles.css'
 
 interface IProps {
 
@@ -18,7 +19,7 @@ const CustomerPage: React.FC<IProps> = () => {
         <>
             <div className="customer-page-container">
                 <div className='spacer-3' />
-                <h1 className="main-header">{`hello ${decodedToken.sub}`}</h1>
+                <h1 className="main-heading">{`hello ${decodedToken.sub}`}</h1>
                 <div className='spacer-3' />
                 <div className="customer-container">
                     <Row>

@@ -81,7 +81,7 @@ const Cart = () => {
             {cart.length !== 0 &&
                 <AppModal
                     title="CHECKOUT"
-                    button="TO CHECKOUT"
+                    button="to-checkout"
                 >
                     <Checkout />
                 </AppModal>}

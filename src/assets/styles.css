@@ -4,10 +4,10 @@ a {
 }
 
 h1.main-heading {
-    margin-top: 3vh;
+    margin: 3vh;
     font-family: "Rubik", sans-serif;
     font-style: italic;
-    font-size: 50px;
+    font-size: 40px;
     font-weight: 900;
     color: #fff;
 }
@@ -166,3 +166,40 @@ h1.about-us-contact-link {
     text-align: left;
     width: 600px;
 }
+
+h5.customer-page-profile {
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    color: rgb(60, 60, 60);
+    cursor: pointer;
+    text-align: left;
+  }
+
+  h3.cart-card-title {
+    font-size: 18px;
+    font-family: "Rubik", sans-serif;
+    font-weight: 300;
+    text-align: center;
+    color: rgb(48, 48, 48);
+    cursor: pointer;
+  }
+  
+  h4.cart-card-description {
+    margin-top: 1rem;
+    font-size: 14px;
+    font-family: "Rubik", sans-serif;
+    font-weight: 200;
+    text-align: center;
+    color: rgb(48, 48, 48);
+    cursor: pointer;
+  }
+
+  h5.customer-page-cart-header {
+    font-size: 30px;
+    font-family: "Rubik", sans-serif;
+    font-weight: 300;
+    text-align: center;
+    color: rgb(48, 48, 48);
+    cursor: pointer;
+  }

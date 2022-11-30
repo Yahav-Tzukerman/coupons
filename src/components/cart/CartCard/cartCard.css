@@ -1,12 +1,11 @@
-.cart-card {
-    height: 150px;
+.cart-cart-cart {
+    height: 200px;
     width: 100%;
-    background: rgb(0, 0, 0);
-    background: linear-gradient(291deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 50%, rgb(255, 255, 255) 100%);
-    margin-top: 1rem;
-    backdrop-filter: blur(20px);
+    margin-top: 2vh;
     border-radius: 24px;
-    border: 1px solid rgb(0, 0, 0);
+    border: 2px solid rgb(255, 253, 254, 0.5);
+    background: rgb(243, 243, 243);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
 }
 
 .cart-card-card-body {
@@ -16,45 +15,199 @@
     align-items: center;
     width: 100%;
     height: 150px;
+    border-top-right-radius: 24px;
+    /* box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); */
 }
 
 .cart-card-price-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 150px;
-    border-right: 1px solid rgb(0, 0, 0);
+    height: 50px;
 }
 
 .cart-card-coupons-amount {
-    position: relative;
     display: inline-block;
-    background-color: rgba(61, 61, 61);
-    width: 80px;
-    color: white;
-    margin-left: 10px;
-    margin-bottom: 0;
-    border: none;
+    width: 100px;
     border-radius: 16px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 0;
+    background: linear-gradient(
+        180deg, 
+        #7300ff3f, #91bcfd7b);
+    border: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+    box-shadow:
+        7px 7px 20px 0px #fff9,
+        4px 4px 5px 0px #fff9,
+        -7px -7px 20px 0px #0002,
+        -4px -4px 5px 0px #0001;
+    transition: box-shadow 0.6s cubic-bezier(.79, .21, .06, .81);
+    font-size: 16px;
+    color: rgb(48, 48, 48);
+    text-decoration: none;
+}
+
+.cart-card-coupons-price {
+    display: inline-block;
+    width: 150px;
+    border-radius: 16px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 0;
+    background: linear-gradient(
+        180deg, 
+        #7300ff3f, #91bcfd7b);
+    border: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+    box-shadow:
+        7px 7px 20px 0px #fff9,
+        4px 4px 5px 0px #fff9,
+        -7px -7px 20px 0px #0002,
+        -4px -4px 5px 0px #0001;
+    transition: box-shadow 0.6s cubic-bezier(.79, .21, .06, .81);
+    font-size: 16px;
+    color: rgb(48, 48, 48);
+    text-decoration: none;
 }
 
 .cart-card-image-container img {
     width: 100%;
-    height: 150px;
-    object-fit: cover;
+    height: 200px;
+    top: -2px;
+    left: -1px;
+    object-fit: contain;
     position: relative;
-    border: none;
-    border-bottom-right-radius: 24px;
-    border-top-right-radius: 24px;
+    border-top-left-radius: 24px;
+    border-bottom-left-radius: 24px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
-.cart-card .col-sm-2 {
+.body-border {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 1rem;
+    padding: 1rem;
+    height: 130px;
+    width: 550px;
+    border-radius: 25px;
+    background: linear-gradient(
+        180deg, 
+        #7300ff3f, #91bcfd7b);
+    /* background: #b4edff; */
+    box-shadow:
+        7px 7px 20px 0px #fff9,
+        4px 4px 5px 0px #fff9,
+        -7px -7px 20px 0px #0002,
+        -4px -4px 5px 0px #0001;
+}
+
+.cart-card {
     padding: 0;
     margin: 0;
 }
 
+.cart-decrease {
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    background: #444444;
+    border: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+    box-shadow:
+        -7px -7px 20px 0px #fff9,
+        -4px -4px 5px 0px #fff9,
+        7px 7px 20px 0px #0002,
+        4px 4px 5px 0px #0001;
+    transition: box-shadow 0.6s cubic-bezier(.79, .21, .06, .81);
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+.cart-increase {
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    background: #444444;
+    border: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+    box-shadow:
+    -7px -7px 20px 0px #fff9,
+    -4px -4px 5px 0px #fff9,
+    7px 7px 20px 0px #0002,
+    4px 4px 5px 0px #0001;
+    transition: box-shadow 0.6s cubic-bezier(.79, .21, .06, .81);
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
 .remove-item {
-    background-color: red;
+    width: 150px;
+    border-radius: 25px;
+    background: #ff00407b;
+    border: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+    box-shadow:
+        7px 7px 20px 0px #fff9,
+        4px 4px 5px 0px #fff9,
+        -7px -7px 20px 0px #0002,
+        -4px -4px 5px 0px #0001;
+    transition: box-shadow 0.6s cubic-bezier(.79, .21, .06, .81);
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+}
+
+.remove-item:hover,
+.cart-increase:hover,
+.cart-decrease:hover {
+    color: radial-gradient(circle, #0ff 0%, #e0e5ec 10%);
+    background: #ff0040d4;
+    animation: colorchange 3s linear infinite;
+}
+
+.remove-item:active,
+.cart-increase:active,
+.cart-decrease:active {
+    box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .5),
+        -2px -2px 6px 0 rgba(116, 125, 136, .2),
+        inset -4px -4px 6px 0 rgba(255, 255, 255, .5),
+        inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+}
+
+
+.to-checkout {
+    margin-top: 2vh;
+    width: 150px;
+    height: 50px;
+    border-radius: 25px;
+    background: #e0e0e0;
+    border: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+    box-shadow:
+        7px 7px 20px 0px #fff9,
+        4px 4px 5px 0px #fff9,
+        -7px -7px 20px 0px #0002,
+        -4px -4px 5px 0px #0001;
+    transition: box-shadow 0.6s cubic-bezier(.79, .21, .06, .81);
+    font-size: 16px;
+    color: #666;
+    text-decoration: none;
+}
+
+.to-checkout:hover {
+    background: #eaeaea;
 }
