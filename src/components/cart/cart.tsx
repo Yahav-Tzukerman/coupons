@@ -4,10 +4,7 @@ import './cart.css';
 import '../../assets/styles.css'
 import { IPurchaseRequest } from '../../models/IPurchaseRequest';
 import { AppState } from "../../redux/app-state";
-import PurchaseService from "../../services/purchase.service";
 import CartCard from "./CartCard/cartCard";
-import { ActionType } from "../../redux/action-type";
-import { useEffect } from "react";
 import AppModal from "../common/AppModal/AppModal";
 import { Link } from "react-router-dom";
 import Checkout from "./checkout/checkout";
@@ -35,10 +32,6 @@ const Cart = () => {
 
     function onPurchase() {
 
-
-
-
-
         // for (let i = 0; i < cart.length; i++) {
         //     PurchaseService.purchase(cart[i] ? cart[i] : purchaseObj).then((response) => {
         //         console.log(response.data);
@@ -55,9 +48,9 @@ const Cart = () => {
 
 
 
-    useEffect(() => {
+    // useEffect(() => {
 
-    }, [cart])
+    // }, [])
 
     return (
         <div className="cart-container">
@@ -81,7 +74,7 @@ const Cart = () => {
             {cart.length !== 0 &&
                 <AppModal
                     title="CHECKOUT"
-                    button="TO CHECKOUT"
+                    button="to-checkout"
                 >
                     <Checkout />
                 </AppModal>}
@@ -96,6 +89,10 @@ export default Cart
 
 
 
+
+function useEffect(arg0: () => void, arg1: IPurchaseRequest[][]) {
+    throw new Error("Function not implemented.");
+}
 // function onPurchase() {
 //     for (let i = 0; i < cart.length; i++) {
 //         PurchaseService.purchase(cart[i] ? cart[i] : purchaseRequestObj).then((response) => {

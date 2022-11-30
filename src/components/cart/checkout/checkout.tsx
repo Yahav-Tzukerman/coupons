@@ -6,26 +6,20 @@ import CouponsService from "../../../services/coupon.service";
 import CheckoutItem from "./checkout-item/checkoutItem";
 
 const Checkout = () => {
-
+    
     const cart: IPurchaseRequest[] = useSelector((state: AppState) => state.cart);
 
     const [total, setTotal] = useState(0);
     let count = 0;
 
-
-
     useEffect(() => {
-
         cart.forEach(async cartItem => {
             let coupon = await CouponsService.getCouponById(cartItem.couponId).then(response => {
                 let x = (response.data.price * cartItem.amount);
                 count = count + x;
                 setTotal(count);
             });
-            // 
         })
-
-
     }, []);
 
 

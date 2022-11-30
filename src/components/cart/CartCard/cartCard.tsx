@@ -64,6 +64,7 @@ const CartCard = ({ couponId, amount, onRemoveItem }: ICartCardProps) => {
                             <input type="button" value="-" onClick={() => changeAmount(requstedAmount - 1)} disabled={requstedAmount - 1 === 0} />
                             <p className="cart-card-coupons-amount">{requstedAmount}</p>
                             <input type="button" value="+" onClick={() => changeAmount(requstedAmount + 1)} disabled={requstedAmount + 1 > coupon.amount} />
+                            <p>{coupon?.price * amount}</p>
                         </div>
                         <div className="remove-item">
                             <input type="button" className="remove-item" value="remove" onClick={() => onRemoveItem(coupon.id)} />
