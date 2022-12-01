@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import { ICoupon } from "../../../../models/ICoupon";
 import { IPurchaseRequest } from "../../../../models/IPurchaseRequest";
 import CouponsService from "../../../../services/coupon.service";
+import './checkoutItem.css' 
 
 interface ICheckoutItemProps {
     couponId: number
@@ -24,7 +25,7 @@ const CheckoutItem = ({ couponId, amount }: ICheckoutItemProps) => {
     }, []);
 
     return (
-        <div className="checkout">
+        <div className="checkout-item" >
             <h5>{coupon?.title}</h5>
             <h5>{`${price}$`}</h5>
             <h5>{amount}</h5>
