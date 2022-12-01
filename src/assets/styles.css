@@ -174,18 +174,18 @@ h5.customer-page-profile {
     color: rgb(60, 60, 60);
     cursor: pointer;
     text-align: left;
-  }
+}
 
-  h3.cart-card-title {
+h3.cart-card-title {
     font-size: 18px;
     font-family: "Rubik", sans-serif;
     font-weight: 300;
     text-align: center;
     color: rgb(48, 48, 48);
     cursor: pointer;
-  }
-  
-  h4.cart-card-description {
+}
+
+h4.cart-card-description {
     margin-top: 1rem;
     font-size: 14px;
     font-family: "Rubik", sans-serif;
@@ -193,13 +193,47 @@ h5.customer-page-profile {
     text-align: center;
     color: rgb(48, 48, 48);
     cursor: pointer;
-  }
+}
 
-  h5.customer-page-cart-header {
+h5.customer-page-cart-header {
     font-size: 30px;
     font-family: "Rubik", sans-serif;
     font-weight: 300;
     text-align: center;
     color: rgb(48, 48, 48);
     cursor: pointer;
-  }
+}
+
+h5.invoice {
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+    font-weight: 200;
+    color: black;
+    text-align: left;
+}
+
+h5.invoice-head {
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+    font-weight: 200;
+    color: white;
+    text-align: center;
+}
+
+h1.invoice-total-price {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    font-weight: 200;
+    color: rgb(67, 67, 67);
+    text-align: center;
+}
+
+h6.invoice-date {
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    font-weight: 100;
+    color: rgb(67, 67, 67);
+    text-align: center;
+}

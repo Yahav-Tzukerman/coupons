@@ -2,7 +2,8 @@ import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Toolti
 import { Bar } from 'react-chartjs-2';
 import { useState } from 'react';
 import { useEffect } from 'react';
-import PurchaseService from './../../../../services/purchase.service';
+import PurchaseService from '../../../../services/purchase.service';
+import { IRevenue } from '../../../../models/IRevenue';
 
 
 ChartJS.register(
@@ -30,7 +31,7 @@ const SalesPerMonth = () => {
     console.log(max);
 
     const highestValueColor = dataPoints.map((dataPoint, index) => {
-        const color = dataPoint === max ? 'rgba( 162, 1, 255, 0.6)' : 'rgba(255, 1, 60, 0.6)';
+        const color = dataPoint === max ? 'rgba(255, 1, 60, 0.6)' : 'rgba(255, 1, 60, 0.6)';
         bgc.push(color);
 
         if(max === dataPoint) {
@@ -67,7 +68,7 @@ const SalesPerMonth = () => {
                     data: dataPoints,
                     backgroundColor: bgc,
                     borderColor: bgc,
-                    color: "rgba(255, 1, 60, 1)",
+                    color: "rgb(255, 187, 114, 1)",
                     borderWidth: 1,
                 },
             ],

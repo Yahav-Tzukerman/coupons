@@ -31,7 +31,7 @@ const SalesPerMonth = () => {
     console.log(max);
 
     const highestValueColor = dataPoints.map((dataPoint, index) => {
-        const color = dataPoint === max ? 'rgba( 162, 1, 255, 0.6)' : 'rgba(255, 1, 60, 0.6)';
+        const color = dataPoint === max ? 'rgba(255, 1, 60, 0.6)' : 'rgba(255, 251, 1, 0.6)';
         bgc.push(color);
 
         if (max === dataPoint) {
@@ -68,7 +68,7 @@ const SalesPerMonth = () => {
                     data: dataPoints,
                     backgroundColor: bgc,
                     borderColor: bgc,
-                    color: "rgba(255, 1, 60, 1)",
+                    color: "rgb(255, 187, 114, 1)",
                     borderWidth: 1,
                 },
             ],
