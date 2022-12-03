@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react"
+import { Col, Row } from "react-bootstrap";
 import { ICoupon } from "../../../../models/ICoupon";
 import { IPurchaseRequest } from "../../../../models/IPurchaseRequest";
 import CouponsService from "../../../../services/coupon.service";
-import './checkoutItem.css' 
+import './checkout.css'
+import '../../../../assets/styles.css'
 
 interface ICheckoutItemProps {
     couponId: number
@@ -25,10 +27,32 @@ const CheckoutItem = ({ couponId, amount }: ICheckoutItemProps) => {
     }, []);
 
     return (
-        <div className="checkout-item" >
-            <h5>{coupon?.title}</h5>
-            <h5>{`${price}$`}</h5>
-            <h5>{amount}</h5>
+        <div className="checkout">
+            <div className="checkout-item">
+                <Row>
+                    <Col sm={7}>
+                        <div className="title-invoice">
+                            <h5 className="invoice">
+                                {coupon?.title}
+                            </h5>
+                        </div>
+                    </Col>
+                    <Col sm={2}>
+                        <div className="amt-invoice">
+                            <h5 className="invoice">
+                                {amount}
+                            </h5>
+                        </div>
+                    </Col>
+                    <Col sm={3}>
+                        <div className="price-invoice">
+                            <h5 className="invoice">
+                                {`${price}$`}
+                            </h5>
+                        </div>
+                    </Col>
+                </Row>
+            </div> 
         </div>
     );
 }

@@ -1,0 +1,129 @@
+.wrapper {
+    background-color: white;
+    color: rgb(0, 0, 0);
+    padding: 30px;
+    border-radius: 25px;
+}
+
+.invoice-wrapper {
+    width: 700px;
+    max-width: 100%;
+    border-radius: 25px;
+    border: 3px solid rgb(67, 67, 67);
+}
+
+.logo-invoice-wrap img {
+    height: 100px;
+    width: 100px;
+}
+
+.invoice-wrapper .invoice-header .logo-invoice-wrap,
+.invoice-wrapper .invoice-header .bill-total-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.invoice-sec {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.invoice-body {
+    width: 700px;
+    max-width: 100%;
+}
+
+.invoice-body-border {
+    padding: 20px;
+}
+
+.invoice-head-desc {
+    display: inline-block;
+    height: 50px;
+    width: 100%;
+    background-color: rgb(67, 67, 67);
+    padding-top: 16px;
+}
+
+.title-invoice-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    margin-left: 1rem;
+}
+
+.price-invoice-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.amount-invoice-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#confirm-purchase-btn {
+    width: 300px;
+    border-radius: 25px;
+    background-color: rgb(173, 130, 0);
+}
+
+#confirm-purchase-btn:hover {
+    background-color: rgb(255, 191, 0);
+}
+
+.pay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

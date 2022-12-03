@@ -1,6 +1,6 @@
 .admin-page-container {
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: flex-start;
     min-height: 100vh;
@@ -58,6 +58,7 @@
     cursor: pointer;
     width: 1400px;
     padding: 16px;
+    min-height: 70vh;
     text-align: center;
     border: none;
     outline: none;
@@ -89,10 +90,10 @@ tr,
 td {
     color: white;
     font-size: 14px;
-    padding: 20px;
+    padding: 6px;
     font-weight: 400;
     text-align: center;
-    box-shadow: 0 0 2px rgba(238, 238, 238, 0.576);
+    border: 1px solid #ffffff80;
 }
 
 .table td,
@@ -100,8 +101,6 @@ th,
 thead,
 tbody {
     width: 1400px;
-    border: none;
-    box-shadow: 0 0 2px rgba(183, 183, 183, 0.576);
 }
 
 #description,
@@ -115,10 +114,11 @@ tbody {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    width: 200px;
+    width: 300px;
     border-radius: 16px;
-    border: 1px solid rgba(255, 1, 60, 1);
-    background-color: rgba(255, 1, 60, 0.5);
+    margin-left: 10px;
+    border: 1px solid rgb(255, 187, 114, 1);
+    background: rgb(255, 187, 114, 0.3);
 }
 
 #statistics-total-users-icon {
@@ -170,6 +170,6 @@ tbody {
     align-items: center;
     width: 150px;
     border-radius: 16px;
-    border: 1px solid rgba(162, 1, 255, 1);
-    background-color: rgba(162, 1, 255, 0.5);
+    border: 1px solid rgba(255, 1, 39, 1);
+    background-color: #ff012780;
 }

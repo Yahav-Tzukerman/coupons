@@ -9,7 +9,7 @@
 }
 
 .customer-container {
-    min-height: 60vh;
+    min-height: 100vh;
     padding: 1rem;
     width: 90vw;
     background: rgba(255, 255, 255, 0.542);
@@ -35,7 +35,7 @@
     border-radius: 24px;
     padding: 1rem;
     width: 56rem;
-    min-height: 60vh;
+    min-height: 100vh;
     background: rgb(243, 243, 243, 0.3);
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(20px);
