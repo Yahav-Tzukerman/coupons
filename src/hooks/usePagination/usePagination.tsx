@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 
-function usePagination() {
+export interface IUsePaginationProps {
+    pageSize?: number;
+}
 
-    const [pageSize, setPageSize] = useState<number>(5);
+function usePagination({ pageSize = 5}: IUsePaginationProps) {
+
     const [pageNumber, setPageNumber] = useState<number>(0);
     const [totalElements, setTotalElements] = useState<number>(0);
 
@@ -12,7 +15,6 @@ function usePagination() {
         pageNumber,
         setPageNumber,
         setTotalElements,
-        setPageSize
     }
 }
 

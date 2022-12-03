@@ -8,9 +8,10 @@ import { ActionType } from "../../redux/action-type";
 
 export interface IUseCouponsProps {
     isAllowAll?: boolean;
+    pageSize?: number;
 }
 
-function useCoupons<IUseCoupons>({ isAllowAll = true }: IUseCouponsProps) {
+function useCoupons<IUseCoupons>({ isAllowAll = true, pageSize = 4 }: IUseCouponsProps) {
 
     const [coupons, setCoupons] = useState<ICoupon[]>([]);
     const [companyIdFilter, setCompanyIdFilter] = useState<number>(0);
@@ -22,11 +23,7 @@ function useCoupons<IUseCoupons>({ isAllowAll = true }: IUseCouponsProps) {
     const [filter, setFilter] = useState<string>(id !== 0 ? 'BY_COMPANY' : '');
     const dispatch = useDispatch();
 
-    const { totalElements, pageSize, pageNumber, setPageNumber, setTotalElements, setPageSize } = usePagination();
-
-    const onChangePageSize = (pageSize: number) => {
-        setPageSize(pageSize);
-    }
+    const { totalElements, pageNumber, setPageNumber, setTotalElements } = usePagination({ pageSize: pageSize});
 
     const onCategoryChange = (category: string) => {
         if (category !== "") {
@@ -86,9 +83,8 @@ function useCoupons<IUseCoupons>({ isAllowAll = true }: IUseCouponsProps) {
 
     return {
         coupons,
-        pagination: { totalElements, pageSize, pageNumber, setPageNumber, setPageSize },
+        pagination: { totalElements, pageSize, pageNumber, setPageNumber },
         filters: { onCategoryChange, onCompanyChange, onMaxPriceChange, onSearchChange, onDefaultFilter },
-        onChangePageSize
     }
 }
 

@@ -10,7 +10,7 @@ import 'react-confirm-alert/src/react-confirm-alert.css';
 function useCompanies() {
 
     const [companies, setCompanies] = useState<ICompany[]>([]);
-    const { totalElements, pageSize, pageNumber, setPageNumber, setTotalElements, setPageSize } = usePagination();
+    const { totalElements, pageSize, pageNumber, setPageNumber, setTotalElements } = usePagination({});
 
     function onDeleteCompany(id: number) {
 
@@ -47,7 +47,7 @@ function useCompanies() {
 
     return {
         companies,
-        companiesPagination: { totalElements, pageSize, pageNumber, setPageNumber, setTotalElements, setPageSize },
+        companiesPagination: { totalElements, pageSize, pageNumber, setPageNumber, setTotalElements },
         onDeleteCompany
     }
 }

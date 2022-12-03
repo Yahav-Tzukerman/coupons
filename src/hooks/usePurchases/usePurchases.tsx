@@ -18,7 +18,7 @@ function usePurchases({ isAllowAll = true }: IUsePurchasesProps) {
     const [total, setTotal] = useState<number>(0);
     const decodedToken = useSelector((state: AppState) => state.decodedToken);
 
-    const { totalElements, pageSize, pageNumber, setPageNumber, setTotalElements, setPageSize } = usePagination();
+    const { totalElements, pageSize, pageNumber, setPageNumber, setTotalElements} = usePagination({});
 
     useEffect(() => {
         PurchaseService.getPurchasesByUserId(pageNumber, pageSize, decodedToken.userId).then((response) => {
@@ -35,7 +35,7 @@ function usePurchases({ isAllowAll = true }: IUsePurchasesProps) {
 
     return {
         purchases,
-        purchasesPagination: { totalElements, pageSize, pageNumber, setPageNumber, setPageSize },
+        purchasesPagination: { totalElements, pageSize, pageNumber, setPageNumber },
         total
     }
 }

@@ -17,16 +17,16 @@ export default function CouponsPage() {
         coupons,
         pagination,
         filters
-    } = useCoupons({});
+    } = useCoupons({ isAllowAll: true, pageSize: 8 });
 
 
     useEffect(() => {
-        pagination.setPageSize(8);
+        // filters.onDefaultFilter();
         console.log(coupons);
-        
+
         // dispatch({ type: ActionType.AppCoupons, payload: { coupons } });
-        
-    }, [coupons]);
+
+    }, []);
 
     return (
         <div className="all-coupons-page">

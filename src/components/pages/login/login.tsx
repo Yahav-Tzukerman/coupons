@@ -11,6 +11,7 @@ import { ActionType } from "../../../redux/action-type";
 import { Col, Row } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook, faTwitter, faInstagram, faGoogle } from '@fortawesome/free-brands-svg-icons'
+import { EMAIL_REGEX, PASSWORD_REGEX } from "../../../constants/matcher";
 
 
 export default function Login() {
@@ -53,11 +54,44 @@ export default function Login() {
                                 <form className="login-login">
                                     <div className="login__field-login">
                                         <i className="login__icon fas fa-user"></i>
-                                        <input onChange={(event) => setUsername(event.target.value)} type="text" className="login__input" placeholder="User name / Email" required />
+                                        <input
+                                            onChange={(event) => setUsername(event.target.value)}
+                                            type="text"
+                                            className="login__input"
+                                            placeholder="User name / Email"
+                                            required
+                                            onFocus={(e) => {
+                                                e.target.value = `${username}`;
+                                                e.target.id = "";
+                                            }}
+                                            onBlur={(e) => {
+                                                if (!EMAIL_REGEX.exec(e.target.value)) {
+                                                    e.target.value = "username must be an email"
+                                                    e.target.id = "input-error";
+                                                }
+                                            }}
+                                        />
                                     </div>
                                     <div className="login__field-login">
                                         <i className="login__icon fas fa-lock"></i>
-                                        <input onChange={(event) => setPassword(event.target.value)} type="password" className="login__input" placeholder="Password" required />
+                                        <input
+                                            onChange={(event) => setPassword(event.target.value)}
+                                            type="password"
+                                            className="login__input"
+                                            placeholder="Password"
+                                            required
+                                            onFocus={(e) => {
+                                                e.target.type = "password"
+                                                e.target.value = `${password}`;
+                                                e.target.id = "";
+                                            }}
+                                            onBlur={(e) => {
+                                                if (!PASSWORD_REGEX.exec(e.target.value)) {
+                                                    e.target.type = "text"
+                                                    e.target.value = "invalid password"
+                                                    e.target.id = "input-error";
+                                                }
+                                            }} />
                                     </div>
                                     <Link to={currentUser?.token !== "" ? '/' : '/login'}>
                                         <input type="button" className="button login__submit" value="Log In Now" onClick={onLogin} />
@@ -68,6 +102,7 @@ export default function Login() {
                                     <div className="login-register-navigator">
                                         <Link to={"/register"}>Create Account</Link>
                                     </div>
+                                    {error !== "" && <div className="form-error">{error}</div>}
                                 </div>
                             </div>
                             <div className="screen__background">

@@ -8,7 +8,7 @@ import 'react-confirm-alert/src/react-confirm-alert.css';
 function useUsers() {
 
     const [users, setUsers] = useState<IUserResponse[]>([]);
-    const { totalElements, pageSize, pageNumber, setPageNumber, setTotalElements, setPageSize } = usePagination();
+    const { totalElements, pageSize, pageNumber, setPageNumber, setTotalElements} = usePagination({});
 
     function onDeleteUser(id: number) {
         confirmAlert({
@@ -44,7 +44,7 @@ function useUsers() {
 
     return {
         users,
-        usersPagination: { totalElements, pageSize, pageNumber, setPageNumber, setTotalElements, setPageSize },
+        usersPagination: { totalElements, pageSize, pageNumber, setPageNumber, setTotalElements},
         onDeleteUser
     }
 }

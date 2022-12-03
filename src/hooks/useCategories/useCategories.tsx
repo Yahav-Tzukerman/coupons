@@ -7,7 +7,7 @@ import usePagination from "../usePagination/usePagination";
 function useCategories() {
 
     const [categories, setCategories] = useState<ICategory[]>([]);
-    const { totalElements, pageSize, pageNumber, setPageNumber, setTotalElements, setPageSize } = usePagination();
+    const { totalElements, pageSize, pageNumber, setPageNumber, setTotalElements } = usePagination({});
 
     function onDeleteCategory(id: number) {
 
@@ -28,7 +28,7 @@ function useCategories() {
 
     return {
         categories,
-        categoriesPagination: { totalElements, pageSize, pageNumber, setPageNumber, setTotalElements, setPageSize },
+        categoriesPagination: { totalElements, pageSize, pageNumber, setPageNumber, setTotalElements},
         onDeleteCategory
     }
 }
