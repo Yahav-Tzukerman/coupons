@@ -19,13 +19,13 @@ const Home = () => {
         coupons,
         pagination,
         filters
-    } = useCoupons({ isAllowAll: false });
+    } = useCoupons({ isAllowAll: false, pageSize: 3 });
 
     const {
         coupons: coupons2,
         pagination: pagination2,
         filters: filters2
-    } = useCoupons({ isAllowAll: false });
+    } = useCoupons({ isAllowAll: false, pageSize: 3 });
 
     useEffect(() => {
         filters.onCategoryChange('WANDS');
@@ -137,7 +137,6 @@ const Home = () => {
                                     <div className="cards-container">
                                         <CardsContainer
                                             coupons={coupons2}
-                                            pagination={pagination2}
                                         />
                                     </div>
                                 </Col>
@@ -149,7 +148,7 @@ const Home = () => {
                                     </h1>
                                 </Col>
                                 <Col sm={5}>
-                                    <input type="button" value="Pokemon" className="go-to-link-button" onClick={() => navigate('/register')} />
+                                    <input type="button" value="Pokemon" className="go-to-link-button" onClick={() => navigate('/company/1')} />
                                 </Col>
                             </div>
                             <div className="home-coupons-display">

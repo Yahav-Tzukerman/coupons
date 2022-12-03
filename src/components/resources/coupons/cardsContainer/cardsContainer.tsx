@@ -10,11 +10,11 @@ import AppPagination from "../../../common/app-pagination/appPagination";
 
 export interface ICardsContainerProps {
     coupons: ICoupon[];
-    pagination: any;
+    pagination?: any;
 }
 
 export default function CardsContainer({ coupons, pagination }: ICardsContainerProps) {
-    
+
     const { onDeleteCoupon, onBuyCoupon } = useCouponsActions();
 
     useEffect(() => {
@@ -40,11 +40,12 @@ export default function CardsContainer({ coupons, pagination }: ICardsContainerP
                 </Col>
             </Row>
             <Row>
-                <Col sm={12}>
-                    <AppPagination
-                        pagination={pagination}
-                    />
-                </Col>
+                {pagination &&
+                    <Col sm={12}>
+                        <AppPagination
+                            pagination={pagination}
+                        />
+                    </Col>}
             </Row>
         </div >
     );
