@@ -52,7 +52,7 @@ const CheckoutItem = ({ couponId, amount }: ICheckoutItemProps) => {
                         </div>
                     </Col>
                 </Row>
-            </div>
+            </div> 
         </div>
     );
 }
