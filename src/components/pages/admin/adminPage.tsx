@@ -58,7 +58,6 @@ const AdminPage: React.FC<IProps> = () => {
                                 >
                                     <AddOrEditCoupon />
                                 </AppModal>
-                                {/* <input id="add" type="button" className="material-symbols-outlined" value="add" data-tip="add new coupon" data-place="left" /> */}
                             </Col>
                         </Row>
                         <Row>

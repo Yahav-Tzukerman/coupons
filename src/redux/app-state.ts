@@ -25,4 +25,5 @@ export class AppState {
       purchased: IPurchaseResponse[] = [];
 
       public decodedToken: IDecodedToken = localStorage.getItem('token') == undefined ? {sub: '', roles: '' ,userId:0 ,exp:0} : jwt(localStorage.getItem('token') || '');
+      
 }

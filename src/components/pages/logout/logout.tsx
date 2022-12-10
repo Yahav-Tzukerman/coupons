@@ -19,7 +19,7 @@ export default function Logout() {
     useEffect(() => {
         localStorage.clear();
         dispatch({ type: ActionType.OnLogout, payload: { deafaultDecodedToken } });
-        navigate('/home');
+        navigate('/');
         window.location.reload();
     }, []);
 

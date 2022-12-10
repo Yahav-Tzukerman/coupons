@@ -18,18 +18,22 @@ const Home = () => {
     const {
         coupons,
         pagination,
-        filters
+        filters,
+        setDescending
     } = useCoupons({ isAllowAll: false, pageSize: 3 });
 
     const {
         coupons: coupons2,
         pagination: pagination2,
-        filters: filters2
+        filters: filters2,
+        setDescending: setDescending2
     } = useCoupons({ isAllowAll: false, pageSize: 3 });
 
     useEffect(() => {
         filters.onCategoryChange('WANDS');
+        setDescending(true);
         filters2.onCompanyChange(1);
+        setDescending2(true);
     }, [filters, filters2]);
 
     return (

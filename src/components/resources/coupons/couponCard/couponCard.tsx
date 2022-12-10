@@ -79,7 +79,7 @@ const CouponCard = ({
                     </Col>
                 </div>
                 <Col sm={12}>
-                    {(decodedToken == undefined || decodedToken?.sub == '') && <input type="button" className="buy-btn" value="To Purchase Register Now!" onClick={() => navigate('/register')} />}
+                    {(decodedToken == undefined || decodedToken?.sub == '') && <input type="button" className="buy-btn" value="Login Now!" onClick={() => navigate('/login')} />}
                     {(decodedToken?.roles === "ROLE_CUSTOMER") && <input type="button" className={isGrayed ? "grayed-button" : "buy-btn"} value="Add to cart" onClick={() => buyCoupon(data.id, amount)} disabled={isGrayed} />}
                     {(decodedToken?.roles === "ROLE_ADMIN" || decodedToken?.companyId === data.companyId) && (
                         <AppModal

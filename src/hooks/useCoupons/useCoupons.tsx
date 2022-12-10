@@ -31,8 +31,10 @@ function useCoupons<IUseCoupons>({ isAllowAll = true, pageSize = 4 }: IUseCoupon
         if (category !== "") {
             setFilter("BY_CATEGORY")
             setCategory(category);
+            setPageNumber(0);
         } else {
             setFilter('');
+            setPageNumber(0);
         }
     }
 
@@ -40,14 +42,17 @@ function useCoupons<IUseCoupons>({ isAllowAll = true, pageSize = 4 }: IUseCoupon
         if (companyId !== 0) {
             setFilter("BY_COMPANY")
             setCompanyIdFilter(companyId);
+            setPageNumber(0);
         } else {
             setFilter('');
+            setPageNumber(0);
         }
     }
 
     const onMaxPriceChange = (maxPrice: number) => {
         setMaxPrice(maxPrice);
         setFilter("BY_MAX_PRICE");
+        setPageNumber(0);
     }
 
     const onDefaultFilter = () => {
@@ -55,6 +60,7 @@ function useCoupons<IUseCoupons>({ isAllowAll = true, pageSize = 4 }: IUseCoupon
         setCategory('');
         setCompanyIdFilter(0);
         setFilter('');
+        setPageNumber(0);
     }
 
     // ChangeEvent<HTMLInputElement>
@@ -62,9 +68,11 @@ function useCoupons<IUseCoupons>({ isAllowAll = true, pageSize = 4 }: IUseCoupon
         if (search !== "") {
             setSearchedTitle(search);
             setFilter('SEARCH_BY_TITLE');
+            setPageNumber(0);
         } else {
             setSearchedTitle("");
             setFilter("");
+            setPageNumber(0);
         }
     }
 

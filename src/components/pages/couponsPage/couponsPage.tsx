@@ -1,20 +1,19 @@
 import { useEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import useCoupons from "../../../hooks/useCoupons/useCoupons";
-import { ActionType } from "../../../redux/action-type";
 import { AppState } from "../../../redux/app-state";
 import SortDropDown from "../../common/dropdowns/sort-dropdown/sortDropdown";
 import Filters from "../../common/filters-container/Filters";
 import CardsContainer from "../../resources/coupons/cardsContainer/cardsContainer";
 import "./couponsPage.css";
-import { store } from '../../../redux/store';
 import SearchBar from "../../common/search-bar/searchBar";
+import AppModal from "../../common/AppModal/AppModal";
+import AddOrEditCoupon from "../../common/AppForms/addOrEditCoupon";
 
 
 export default function CouponsPage() {
-    // const appCoupons = useSelector((state: AppState) => state.coupons);
-    // const decodedToken = useSelector((state: AppState) => state.decodedToken);
+    const decodedToken = useSelector((state: AppState) => state.decodedToken);
     // const dispatch = useDispatch();
     const {
         coupons,
@@ -28,11 +27,7 @@ export default function CouponsPage() {
 
 
     useEffect(() => {
-        // filters.onDefaultFilter();
         console.log(coupons);
-
-        // dispatch({ type: ActionType.AppCoupons, payload: { coupons } });
-
     }, []);
 
     return (
@@ -42,8 +37,10 @@ export default function CouponsPage() {
                     <h1 className="main-heading">Coupons</h1>
                 </Col>
                 <Col sm={12}>
-                    <SearchBar
-                        filters={filters} />
+                    <div className="search-bar-container">
+                        <SearchBar
+                            filters={filters} />
+                    </div>
                 </Col>
                 <Col sm={2}>
                     <div className="app-coupons-filters">
@@ -56,6 +53,13 @@ export default function CouponsPage() {
                         defaultSort={sortBy}
                     />
                     <input type="button" value={isDescending ? "<" : ">"} onClick={() => setDescending(!isDescending)} />
+                    {(decodedToken?.roles === "ROLE_ADMIN" || decodedToken.roles === "ROLE_COMPANY") &&
+                        <AppModal
+                            title={"Add Coupon"}
+                        >
+                            <AddOrEditCoupon />
+                        </AppModal>
+                    }
                 </Col>
                 <Col sm={10}>
                     <div className="cards-container coupons">

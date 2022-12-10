@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react"
+import { useSelector } from "react-redux";
 import { ICategory } from "../../../../models/ICategory";
+import { AppState } from "../../../../redux/app-state";
 import CategoriesService from "../../../../services/category.service";
 import '../../companies/companiesDropDown/companiesDropDown.css';
 

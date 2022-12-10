@@ -4,8 +4,6 @@ import CompaniesDropDown from "../../resources/companies/companiesDropDown/compa
 import './filters.css';
 import { useState } from 'react';
 import { IFilters } from '../../../models/IFIlters';
-import { useSelector } from "react-redux";
-import { AppState } from "../../../redux/app-state";
 
 export interface IFiltersProps {
     filters: IFilters
@@ -13,7 +11,7 @@ export interface IFiltersProps {
 
 export default function Filters({ filters }: IFiltersProps) {
 
-    const { onCategoryChange, onCompanyChange, onMaxPriceChange, onDefaultFilter, onSearchChange } = filters;
+    const { onCategoryChange, onCompanyChange, onMaxPriceChange, onDefaultFilter } = filters;
     const [show, setShow] = useState<string>('');
 
     return (
