@@ -85,7 +85,7 @@ const CouponCard = ({
                         <AppModal
                             title={"Edit Coupon"}
                             edit={true}
-                            button={"buy-btn"}
+                            button={"edit"}
                         >
                             <AddOrEditCoupon
                                 coupon={data}

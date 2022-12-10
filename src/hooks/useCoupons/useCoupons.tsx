@@ -18,12 +18,14 @@ function useCoupons<IUseCoupons>({ isAllowAll = true, pageSize = 4 }: IUseCoupon
     const [maxPrice, setMaxPrice] = useState<number>(0);
     const [category, setCategory] = useState<string>('');
     const [searchedTitle, setSearchedTitle] = useState<string>('');
+    const [sortBy, setSortBy] = useState<string>('');
+    const [isDescending, setDescending] = useState<boolean>(false);
     const { companyId } = useParams();
     const id = companyId ? parseInt(companyId) : companyIdFilter;
     const [filter, setFilter] = useState<string>(id !== 0 ? 'BY_COMPANY' : '');
     const dispatch = useDispatch();
 
-    const { totalElements, pageNumber, setPageNumber, setTotalElements } = usePagination({ pageSize: pageSize});
+    const { totalElements, pageNumber, setPageNumber, setTotalElements } = usePagination({ pageSize: pageSize });
 
     const onCategoryChange = (category: string) => {
         if (category !== "") {
@@ -56,9 +58,9 @@ function useCoupons<IUseCoupons>({ isAllowAll = true, pageSize = 4 }: IUseCoupon
     }
 
     // ChangeEvent<HTMLInputElement>
-    const onSearchChange = (e: any) => {
-        if (e.target.value !== "") {
-            setSearchedTitle(e.target.value);
+    const onSearchChange = (search: string) => {
+        if (search !== "") {
+            setSearchedTitle(search);
             setFilter('SEARCH_BY_TITLE');
         } else {
             setSearchedTitle("");
@@ -69,22 +71,27 @@ function useCoupons<IUseCoupons>({ isAllowAll = true, pageSize = 4 }: IUseCoupon
     useEffect(() => {
         console.log(pageNumber, maxPrice, category, companyIdFilter, filter, searchedTitle);
         if (isAllowAll) {
-            CouponsService.getAllCoupons(filter, pageNumber, pageSize, id, maxPrice, category, searchedTitle).then((response) => {
+            CouponsService.getAllCoupons(filter, pageNumber, pageSize, id, maxPrice, category, searchedTitle, sortBy, isDescending).then((response) => {
                 setCoupons(response.data.content);
                 setTotalElements(response.data.totalElements);
             });
         } else if (category || companyIdFilter) {
-            CouponsService.getAllCoupons(filter, pageNumber, pageSize, companyIdFilter, maxPrice, category, searchedTitle).then((response) => {
+            CouponsService.getAllCoupons(filter, pageNumber, pageSize, companyIdFilter, maxPrice, category, searchedTitle, sortBy, isDescending).then((response) => {
                 setCoupons(response.data.content);
                 setTotalElements(response.data.totalElements);
             });
         }
-    }, [filter, pageNumber, pageSize, companyIdFilter, maxPrice, category, searchedTitle]);
+    }, [filter, pageNumber, pageSize, companyIdFilter, maxPrice, category, searchedTitle, sortBy, isDescending]);
 
     return {
         coupons,
         pagination: { totalElements, pageSize, pageNumber, setPageNumber },
         filters: { onCategoryChange, onCompanyChange, onMaxPriceChange, onSearchChange, onDefaultFilter },
+        sortBy,
+        isDescending,
+        setDescending,
+        setSortBy,
+        setCoupons
     }
 }
 

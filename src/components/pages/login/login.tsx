@@ -35,7 +35,7 @@ export default function Login() {
                 axios.defaults.headers.common['Authorization'] = token;
                 localStorage.setItem("currentUser", JSON.stringify(user));
                 localStorage.setItem("token", user.token);
-                navigate('/home')
+                navigate('/coupons')
             })
             .catch((error) => {
                 // alert(error.response.data.message);

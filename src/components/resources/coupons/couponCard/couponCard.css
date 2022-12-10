@@ -152,3 +152,28 @@
     right: -15px;
     top: -15px;
 }
+
+.edit {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: rgb(255, 255, 255);
+    background-color: rgba(87, 38, 1, 0.4);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 12px;
+    border-bottom-right-radius: 16px;
+    border-bottom-left-radius: 16px;
+    text-transform: uppercase;
+}
+
+.edit:hover {
+    background: linear-gradient(to right, rgb(105, 54, 0), rgb(255, 149, 0), rgb(105, 54, 0));
+}

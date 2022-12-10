@@ -1,5 +1,5 @@
 .all-coupons-page {
-    margin-top: 20vh;
+    margin-top: 15vh;
     min-height: 120vh;
 }
 
@@ -8,6 +8,9 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    min-width: 56vw;
+    max-width: 70vw;
+    margin-left: 5vw;
 }
 
 .app-coupons-filters {
