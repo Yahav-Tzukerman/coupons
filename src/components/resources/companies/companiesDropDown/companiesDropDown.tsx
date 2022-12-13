@@ -29,7 +29,7 @@ const CompaniesDropDown = ({ selectedCompany, defaultCompanyId }: ICompaniesDrop
 
                 {companies.map(company => (
                     <option value={company.id} key={company.id} >
-                        {company.name}
+                        {company.name === '' ? 'Company' : company.name}
                     </option>
                 ))}
 

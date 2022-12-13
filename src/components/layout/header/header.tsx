@@ -38,10 +38,10 @@ const Header = (props: any) => {
                     <Col sm={9}>
                         <div className="nav-group">
                             <span>
-                                <Link to='/coupons'>Coupons</Link>
+                                <Link to='/coupons' className='hdr-btn'>Coupons</Link>
                             </span>
                             <span>
-                                <Link to='/companies'>Companies</Link>
+                                <Link to='/companies' className='hdr-btn'>Companies</Link>
                             </span>
                         </div>
                     </Col>

@@ -78,7 +78,6 @@ const Cart = () => {
                 >
                     <Checkout />
                 </AppModal>}
-
         </div>
 
     );

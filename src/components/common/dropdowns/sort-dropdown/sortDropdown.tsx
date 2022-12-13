@@ -15,22 +15,26 @@ const SortDropDown = ({ selectedSort, defaultSort }: ISortDropDownProps) => {
                 defaultValue={defaultSort ? defaultSort : "price"}>
 
                 <option value="price" key="1">
+                    Sort by
+                </option>
+
+                <option value="price" key="2">
                     Price
                 </option>
 
-                <option value="title" key="2">
+                <option value="title" key="3">
                     Title
                 </option>
 
-                <option value="startDate" key="3">
+                <option value="startDate" key="4">
                     start date
                 </option>
 
-                <option value="endDate" key="4">
+                <option value="endDate" key="5">
                     end date
                 </option>
 
-                <option value="amount" key="5">
+                <option value="amount" key="6">
                     Amount
                 </option>
 

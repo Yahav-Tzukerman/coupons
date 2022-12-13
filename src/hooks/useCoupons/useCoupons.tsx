@@ -94,11 +94,12 @@ function useCoupons<IUseCoupons>({ isAllowAll = true, pageSize = 4 }: IUseCoupon
     return {
         coupons,
         pagination: { totalElements, pageSize, pageNumber, setPageNumber },
-        filters: { onCategoryChange, onCompanyChange, onMaxPriceChange, onSearchChange, onDefaultFilter },
-        sortBy,
-        isDescending,
-        setDescending,
-        setSortBy,
+        filters: {
+            onCategoryChange, onCompanyChange, onMaxPriceChange, onSearchChange, onDefaultFilter, sortBy,
+            isDescending,
+            setDescending,
+            setSortBy
+        },
         setCoupons
     }
 }

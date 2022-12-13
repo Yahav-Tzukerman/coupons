@@ -4,6 +4,7 @@ import CompaniesDropDown from "../../resources/companies/companiesDropDown/compa
 import './filters.css';
 import { useState } from 'react';
 import { IFilters } from '../../../models/IFIlters';
+import SortDropDown from "../dropdowns/sort-dropdown/sortDropdown";
 
 export interface IFiltersProps {
     filters: IFilters
@@ -11,23 +12,22 @@ export interface IFiltersProps {
 
 export default function Filters({ filters }: IFiltersProps) {
 
-    const { onCategoryChange, onCompanyChange, onMaxPriceChange, onDefaultFilter } = filters;
+    const { onCategoryChange, onCompanyChange, onMaxPriceChange, onDefaultFilter, sortBy, setSortBy, isDescending, setDescending } = filters;
     const [show, setShow] = useState<string>('');
 
     return (
         <div className="filters-container">
             <span className="label">Filters</span>
             <Row>
-                <Col sm={12}>
+                <Col sm={2}>
                     <input type="button" id="default" name="filters" value="reset filters" className="reset-btn" onClick={() => {
                         setShow('');
                         onDefaultFilter();
                     }} />
                 </Col>
-            </Row>
-            <Row>
-                <Col sm={12}>
-                    <span className="label">by max price</span>
+            
+
+                <Col sm={2}>
                     <input type="number" placeholder="max price" className="max" onChange={(e) => {
                         let value = e.target.value;
                         if (value == '') {
@@ -43,25 +43,32 @@ export default function Filters({ filters }: IFiltersProps) {
                     }}
                     />
                 </Col>
-            </Row>
 
-            <Row>
-                <Col sm={12}>
-                    <span className="label">category</span>
+                <Col sm={2}>
                     <div className={show === 'category' ? 'show-filter' : 'hide'}>
                         <CategoriesDropDown
                             selectedCategory={onCategoryChange} />
                     </div>
                 </Col>
-            </Row>
-            <Row>
-                <Col sm={12}>
-                    <span className="label">company</span>
+
+                <Col sm={2}>
                     <div className={show === 'company' ? 'show-filter' : 'hide'}>
                         <CompaniesDropDown
                             selectedCompany={onCompanyChange} />
                     </div>
                 </Col>
+                <Col sm={2}>
+                    <SortDropDown
+                        selectedSort={setSortBy}
+                        defaultSort={sortBy}
+                    />
+
+                </Col>
+
+                <Col sm={2}>
+                    <input type="button" className="asc-desc-btn" value={isDescending ? "Ascending" : "Descending"} onClick={() => setDescending(!isDescending)} /> 
+                </Col>
+             
             </Row>
         </div>
     );

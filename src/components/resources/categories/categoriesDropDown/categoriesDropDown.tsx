@@ -26,13 +26,13 @@ const CategoriesDropDown = ({ selectedCategory, defaultCategory }: ICategoriesDr
 
     return (
         <div className="dropdown-container">
-            <select name="dropdown"
+            <select name="dropdown" 
                 onChange={(e) => selectedCategory(e.target.value)}
                 defaultValue={defaultCategory ? categories.filter(category => category.name === defaultCategory).pop()?.name : ''}>
 
                 {categories.map(category => (
                     <option value={category.name} key={category.name} >
-                        {category.name}
+                        {category.name === '' ? 'Category' : category.name}
                     </option>
                 ))}
 

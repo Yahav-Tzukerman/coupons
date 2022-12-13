@@ -18,11 +18,7 @@ export default function CouponsPage() {
     const {
         coupons,
         pagination,
-        filters,
-        sortBy,
-        isDescending,
-        setDescending,
-        setSortBy
+        filters
     } = useCoupons({ isAllowAll: true, pageSize: 8 });
 
 
@@ -42,17 +38,13 @@ export default function CouponsPage() {
                             filters={filters} />
                     </div>
                 </Col>
-                <Col sm={2}>
+                <Col sm={12}>
                     <div className="app-coupons-filters">
                         <Filters
                             filters={filters}
                         />
                     </div>
-                    <SortDropDown
-                        selectedSort={setSortBy}
-                        defaultSort={sortBy}
-                    />
-                    <input type="button" value={isDescending ? "<" : ">"} onClick={() => setDescending(!isDescending)} />
+           
                     {(decodedToken?.roles === "ROLE_ADMIN" || decodedToken.roles === "ROLE_COMPANY") &&
                         <AppModal
                             title={"Add Coupon"}
@@ -61,8 +53,8 @@ export default function CouponsPage() {
                         </AppModal>
                     }
                 </Col>
-                <Col sm={10}>
-                    <div className="cards-container coupons">
+                <Col sm={12}>
+                    <div className="cards-container-coupons">
                         <CardsContainer
                             coupons={coupons}
                             pagination={pagination}
