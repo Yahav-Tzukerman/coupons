@@ -34,11 +34,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 80%;
-    margin-left: 10%;
+    width: 90%;
+    margin-left: 5%;
     height: 100px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
     background: linear-gradient(to right, rgb(73, 38, 0, 0.2), rgba(172, 100, 0, 0.2), rgb(73, 38, 0, 0.2));
-
 }
 
 .app-coupons-filters {
@@ -46,8 +47,11 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 80%;
-    margin-left: 10%;
+    width: 90%;
+    margin-left: 5%;
     height: 100px;
+    margin-bottom: 1rem;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
     background: linear-gradient(to right, rgb(73, 38, 0, 0.2), rgba(172, 100, 0, 0.2), rgb(73, 38, 0, 0.2));
 }

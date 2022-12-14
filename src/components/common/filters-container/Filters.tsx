@@ -17,7 +17,7 @@ export default function Filters({ filters }: IFiltersProps) {
 
     return (
         <div className="filters-container">
-            <span className="label">Filters</span>
+            <h3 className="filter-header">Filters</h3>
             <Row>
                 <Col sm={2}>
                     <input type="button" id="default" name="filters" value="reset filters" className="reset-btn" onClick={() => {

@@ -69,6 +69,14 @@ h3.company-name-header {
     text-shadow: 0 0 2px rgb(86, 45, 0);
 }
 
+h3.filter-header {
+    font-family: "Roboto", sans-serif;
+    font-size: 30px;
+    font-weight: 200;
+    color: rgb(255, 255, 255);
+    margin-bottom: 1rem;
+}
+
 h5.card-title {
     font-family: "Roboto", sans-serif;
     font-size: 14px;
@@ -190,8 +198,8 @@ h3.cart-card-title {
     font-size: 18px;
     font-family: "Rubik", sans-serif;
     font-weight: 300;
-    text-align: center;
-    color: rgb(48, 48, 48);
+    text-align: left;
+    color: rgb(255, 255, 255);
     cursor: pointer;
 }
 
@@ -200,8 +208,8 @@ h4.cart-card-description {
     font-size: 14px;
     font-family: "Rubik", sans-serif;
     font-weight: 200;
-    text-align: center;
-    color: rgb(48, 48, 48);
+    text-align: left;
+    color: rgb(255, 255, 255);
     cursor: pointer;
 }
 

@@ -1,10 +1,10 @@
 .cart-cart-cart {
-    height: 200px;
+    height: 150px;
     width: 100%;
     margin-top: 2vh;
     border-radius: 24px;
     border: 2px solid rgb(255, 253, 254, 0.5);
-    background: rgb(243, 243, 243);
+    background-color: rgb(108, 108, 108);
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -14,99 +14,72 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 150px;
+    height: 100px;
     border-top-right-radius: 24px;
-    /* box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); */
+}
+
+.amount-group {
+    margin-bottom: 1px;
+    height: 74px;
+    width: 100%;
+    margin-left: 2.2rem;
 }
 
 .cart-card-price-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 50px;
+    height: 149px;
 }
 
 .cart-card-coupons-amount {
     display: inline-block;
     width: 100px;
-    border-radius: 16px;
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-bottom: 0;
-    background: linear-gradient(
-        180deg, 
-        #7300ff3f, #91bcfd7b);
-    border: none;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    -webkit-tap-highlight-color: transparent;
-    box-shadow:
-        7px 7px 20px 0px #fff9,
-        4px 4px 5px 0px #fff9,
-        -7px -7px 20px 0px #0002,
-        -4px -4px 5px 0px #0001;
-    transition: box-shadow 0.6s cubic-bezier(.79, .21, .06, .81);
+    height: 70px;
+    /* margin-left: 1px;
+    margin-right: 1px; */
+    padding: 26px;
+    background-color: rgb(0, 0, 0);
     font-size: 16px;
-    color: rgb(48, 48, 48);
+    color: rgb(255, 255, 255);
     text-decoration: none;
 }
 
 .cart-card-coupons-price {
     display: inline-block;
-    width: 150px;
-    border-radius: 16px;
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-bottom: 0;
-    background: linear-gradient(
-        180deg, 
-        #7300ff3f, #91bcfd7b);
-    border: none;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    -webkit-tap-highlight-color: transparent;
-    box-shadow:
-        7px 7px 20px 0px #fff9,
-        4px 4px 5px 0px #fff9,
-        -7px -7px 20px 0px #0002,
-        -4px -4px 5px 0px #0001;
-    transition: box-shadow 0.6s cubic-bezier(.79, .21, .06, .81);
+    width: 100px;
+    height: 70px;
+    /* margin-left: 1px;
+    margin-right: 1px; */
+    margin-top: 2px;
+    padding: 26px;
+    background-color: rgb(0, 0, 0);
     font-size: 16px;
-    color: rgb(48, 48, 48);
+    color: rgb(255, 255, 255);
     text-decoration: none;
 }
 
+
 .cart-card-image-container img {
     width: 100%;
-    height: 200px;
-    top: -2px;
-    left: -1px;
+    height: 150px;
     object-fit: contain;
     position: relative;
-    border-top-left-radius: 24px;
-    border-bottom-left-radius: 24px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 .body-border {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    margin-top: 1rem;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 3rem;
+    margin-left: 6rem;
     padding: 1rem;
     height: 130px;
     width: 550px;
     border-radius: 25px;
-    background: linear-gradient(
-        180deg, 
-        #7300ff3f, #91bcfd7b);
-    /* background: #b4edff; */
-    box-shadow:
-        7px 7px 20px 0px #fff9,
-        4px 4px 5px 0px #fff9,
-        -7px -7px 20px 0px #0002,
-        -4px -4px 5px 0px #0001;
 }
 
 .cart-card {
@@ -115,78 +88,68 @@
 }
 
 .cart-decrease {
-    width: 25px;
-    height: 25px;
-    border-radius: 100%;
-    background: #444444;
+    width: 75px;
+    height: 70px;
+    padding-top: 6px;
+    margin-left: 1px;
+    /* margin-right: 1px; */
+    border-bottom-left-radius: 24px;
     border: none;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    -webkit-tap-highlight-color: transparent;
-    box-shadow:
-        -7px -7px 20px 0px #fff9,
-        -4px -4px 5px 0px #fff9,
-        7px 7px 20px 0px #0002,
-        4px 4px 5px 0px #0001;
-    transition: box-shadow 0.6s cubic-bezier(.79, .21, .06, .81);
-    font-size: 16px;
+    background-color: rgb(35, 35, 35);
+    font-size: 18px;
     color: rgb(255, 255, 255);
     text-decoration: none;
 }
 
 .cart-increase {
-    width: 25px;
-    height: 25px;
-    border-radius: 100%;
-    background: #444444;
+    width: 75px;
+    height: 70px;
+    padding-top: 6px;
+    /* margin-left: 1px; */
+    margin-right: 2px;
+    border-bottom-right-radius: 24px;
     border: none;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    -webkit-tap-highlight-color: transparent;
-    box-shadow:
-    -7px -7px 20px 0px #fff9,
-    -4px -4px 5px 0px #fff9,
-    7px 7px 20px 0px #0002,
-    4px 4px 5px 0px #0001;
-    transition: box-shadow 0.6s cubic-bezier(.79, .21, .06, .81);
-    font-size: 16px;
+    background-color: rgb(35, 35, 35);
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+.cart-dollar {
+    width: 75px;
+    height: 70px;
+    padding-top: 6px;
+    margin-left: 1px;
+    /* margin-right: 1px; */
+    border-top-left-radius: 24px;
+    border: none;
+    background-color: rgb(35, 35, 35);
+    font-size: 18px;
     color: rgb(255, 255, 255);
     text-decoration: none;
 }
 
 .remove-item {
-    width: 150px;
-    border-radius: 25px;
-    background: #ff00407b;
+    width: 75px;
+    height: 70px;
+    padding-top: 6px;
+    /* margin-left: 1px; */
+    margin-right: 2px;
+    border-top-right-radius: 24px;
     border: none;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    -webkit-tap-highlight-color: transparent;
-    box-shadow:
-        7px 7px 20px 0px #fff9,
-        4px 4px 5px 0px #fff9,
-        -7px -7px 20px 0px #0002,
-        -4px -4px 5px 0px #0001;
-    transition: box-shadow 0.6s cubic-bezier(.79, .21, .06, .81);
+    background: #9c0027;
     font-size: 16px;
     color: white;
     text-decoration: none;
 }
 
-.remove-item:hover,
+.remove-item:hover {
+    background: #ff0040;
+}
 .cart-increase:hover,
 .cart-decrease:hover {
-    color: radial-gradient(circle, #0ff 0%, #e0e5ec 10%);
-    background: #ff0040d4;
-    animation: colorchange 3s linear infinite;
+    background-color: rgb(77, 77, 77);
 }
-
-.remove-item:active,
-.cart-increase:active,
-.cart-decrease:active {
-    box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .5),
-        -2px -2px 6px 0 rgba(116, 125, 136, .2),
-        inset -4px -4px 6px 0 rgba(255, 255, 255, .5),
-        inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
-}
-
 
 .to-checkout {
     margin-top: 2vh;
