@@ -19,16 +19,17 @@ const CustomerPage: React.FC<IProps> = () => {
         <>
             <div className="customer-page-container">
                 <div className='spacer-3' />
+                <h1 className="main-heading">Customer page</h1>
                 <h1 className="main-heading">{`hello ${decodedToken.sub}`}</h1>
                 <div className='spacer-3' />
                 <div className="customer-container">
                     <Row>
-                        <Col sm={4}>
+                        <Col sm={3}>
                             <div className="customer-profile-panel">
                                 <CustomerDetails />
                             </div>
                         </Col>
-                        <Col sm={8}>
+                        <Col sm={9}>
                             <div className="customer-cart-panel">
                                 <Cart />
                             </div>

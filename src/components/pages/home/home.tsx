@@ -199,7 +199,7 @@ const Home = () => {
                             <div className="about-us-dark-footer">
                                 <Col sm={9}>
                                     <h1 className="about-us-contact-link">
-                                        We are here for you, for any problem or question you can contact us here
+                                        We are here for you, in any problem or question you can contact us here
                                     </h1>
                                 </Col>
                                 <Col sm={3}>

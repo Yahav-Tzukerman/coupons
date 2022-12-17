@@ -31,7 +31,7 @@ const CompanyUserPage: React.FC<IProps> = () => {
         <>
             <div className="admin-page-container">
                 <div className='spacer-3' />
-                <h1 className="main-header">Company Admin Page</h1>
+                <h1 className="main-heading">Company Admin Page</h1>
                 <div className='spacer-3' />
                 <input type="button" value="Coupons" className="accordion" onClick={handlePressCoupons} />
                 <div className={couponsIsOpen ? "" : "closed-panel"}>
@@ -146,24 +146,6 @@ const CompanyUserPage: React.FC<IProps> = () => {
                                         style
                                     </span>
                                     <div className="statistics-total-users-data">
-                                    </div>
-                                </div>
-                            </Col>
-                        </Row>
-                        <Row>
-                            <Col sm={12}>
-                                <div className="chart-container">
-                                </div>
-                            </Col>
-                        </Row>
-                        <Row>
-                            <Col sm={12}>
-                                <div className="chart-map">
-                                    <div className="chart-map-max">
-                                        <h4>Highest income</h4>
-                                    </div>
-                                    <div className="chart-map-second-max">
-                                        <h4>Second highest income</h4>
                                     </div>
                                 </div>
                             </Col>

@@ -21,7 +21,7 @@ const Banner = () => {
                     We offer coupons for the best prices with no competition
                 </h1>
                 <div className='banner-btn-container'>
-                    <input type="button" className='to-app-btn' value='TO APP' onClick={() => navigate('/coupons')} />
+                    <input type="button" className='to-app-btn' value='To coupons' onClick={() => navigate('/coupons')} />
                     <input type="button" className='to-register-btn' value='REGISTER NOW' onClick={() => navigate('/register')} />
                 </div>
             </div>

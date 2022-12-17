@@ -189,14 +189,14 @@ h5.customer-page-profile {
     font-size: 18px;
     font-family: 'Roboto', sans-serif;
     font-weight: 100;
-    color: rgb(60, 60, 60);
+    color: rgb(255, 255, 255);
     cursor: pointer;
     text-align: left;
 }
 
 h3.cart-card-title {
     font-size: 18px;
-    font-family: "Rubik", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 300;
     text-align: left;
     color: rgb(255, 255, 255);
@@ -206,7 +206,7 @@ h3.cart-card-title {
 h4.cart-card-description {
     margin-top: 1rem;
     font-size: 14px;
-    font-family: "Rubik", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 200;
     text-align: left;
     color: rgb(255, 255, 255);
@@ -214,11 +214,11 @@ h4.cart-card-description {
 }
 
 h5.customer-page-cart-header {
-    font-size: 30px;
-    font-family: "Rubik", sans-serif;
+    font-size: 50px;
+    font-family: "Roboto", sans-serif;
     font-weight: 300;
     text-align: center;
-    color: rgb(48, 48, 48);
+    color: rgb(255, 255, 255);
     cursor: pointer;
 }
 

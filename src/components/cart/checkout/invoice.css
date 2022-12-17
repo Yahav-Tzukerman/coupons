@@ -74,11 +74,13 @@
 #confirm-purchase-btn {
     width: 300px;
     border-radius: 25px;
-    background-color: rgb(173, 130, 0);
+    background-color: rgb(28, 28, 28);
+    color: white;
 }
 
 #confirm-purchase-btn:hover {
-    background-color: rgb(255, 191, 0);
+    background-color: rgb(255, 255, 255);
+    color: black;
 }
 
 .pay {
