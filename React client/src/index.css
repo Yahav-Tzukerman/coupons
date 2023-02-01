@@ -1,0 +1,36 @@
+#root {
+  --primary-gradient: linear-gradient(to right, rgb(16, 138, 134), rgb(18, 179, 173), rgb(16, 138, 134));
+  min-height: 100%;
+  display: grid;
+  background: linear-gradient(to right, rgb(75, 39, 0), rgba(255, 123, 0, 0.753), rgb(75, 39, 0));
+
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+a {
+  color: unset;
+  text-decoration: none;
+}
+
+a:hover {
+  color: unset;
+  text-decoration: none;
+}
+
+html,
+body {
+  margin: 0;
+  max-width: 100%;
+  overflow-x: hidden;
+}
